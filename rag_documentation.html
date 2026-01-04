@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Professional RAG Curriculum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --secondary: #6366f1;
+            --accent: #f59e0b;
+        }
+
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .code-font { font-family: 'Fira Code', monospace; }
+
+        .sidebar-scroll::-webkit-scrollbar { width: 5px; }
+        .sidebar-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-link.active {
+            background: linear-gradient(to right, #eff6ff, #ffffff);
+            color: var(--primary);
+            font-weight: 700;
+            border-left: 4px solid var(--primary);
+        }
+
+        .step-pill {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 10px;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade { animation: fadeIn 0.5s ease-out forwards; }
+
+        pre { position: relative; border-radius: 12px; overflow: hidden; }
+        .copy-btn {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(255, 255, 255, 0.1); color: #fff;
+            padding: 5px 10px; border-radius: 6px; font-size: 11px;
+            opacity: 0.7; transition: all 0.2s;
+        }
+        .copy-btn:hover { opacity: 1; background: rgba(255, 255, 255, 0.2); }
+        
+        .math-block {
+            font-family: 'Fira Code', monospace;
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #cbd5e1;
+            margin: 1rem 0;
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-700">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-80 bg-white border-r border-slate-200 transform lg:translate-x-0 -translate-x-full transition-transform duration-300 flex flex-col">
+            <div class="p-8 border-b border-slate-100 flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-blue-200">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-xl tracking-tight">RAG MasterClass</h1>
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">v3.0 Enterprise Edition</span>
+                </div>
+            </div>
+
+            <div class="p-5">
+                <div class="relative group">
+                    <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-blue-600 transition-colors"></i>
+                    <input type="text" id="topicSearch" placeholder="Search modules..." 
+                        class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-100 focus:border-blue-500 focus:bg-white rounded-xl text-sm outline-none transition-all">
+                </div>
+            </div>
+
+            <nav id="navMenu" class="flex-1 overflow-y-auto sidebar-scroll px-4 pb-10 space-y-8">
+                <!-- Groups will be injected here -->
+            </nav>
+
+            <div class="p-6 border-t border-slate-100">
+                <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl text-white shadow-lg">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest opacity-70">Course Progress</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-white/10 rounded-full mb-3">
+                        <div id="progBar" class="h-full bg-blue-500 rounded-full transition-all duration-700" style="width: 10%"></div>
+                    </div>
+                    <p class="text-xs font-medium opacity-80" id="progText">1 of 24 modules complete</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-80 min-h-screen">
+            <header class="glass-nav sticky top-0 z-40 px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-3 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    <span>Academy</span>
+                    <i class="fas fa-chevron-right text-[8px]"></i>
+                    <span id="headerCat" class="text-slate-500">Foundations</span>
+                    <i class="fas fa-chevron-right text-[8px]"></i>
+                    <span id="headerTitle" class="text-blue-600">Overview</span>
+                </div>
+                <div class="flex items-center gap-5">
+                    <button class="text-slate-400 hover:text-blue-600 transition-all text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-cloud-download-alt"></i> Export PDF
+                    </button>
+                    <div class="w-px h-6 bg-slate-200"></div>
+                    <i class="fab fa-github text-xl text-slate-300 hover:text-slate-900 cursor-pointer transition-all"></i>
+                </div>
+            </header>
+
+            <div id="content" class="max-w-4xl mx-auto p-8 lg:p-16 animate-fade">
+                <!-- Content injected here -->
+            </div>
+
+            <footer class="max-w-4xl mx-auto px-8 lg:px-16 py-12 border-t border-slate-200 mt-20 text-center">
+                <div class="flex justify-center gap-8 mb-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/OpenAI_Logo.svg" class="h-5 opacity-20 grayscale hover:opacity-100 transition-all" alt="OpenAI">
+                    <img src="https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/langchain_logo.png" class="h-5 opacity-20 grayscale hover:opacity-100 transition-all" alt="LangChain">
+                </div>
+                <p class="text-slate-400 text-sm font-medium">© 2026 RAG Technical Mastery Series. Built for high-performance AI Engineering.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile UI Toggle -->
+    <button id="mobileMenuBtn" class="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-2xl z-[60] flex items-center justify-center">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <script>
+        const modules = [
+            {
+                id: 'intro',
+                cat: 'Foundations',
+                title: 'Introduction to RAG',
+                icon: 'fa-book-open',
+                desc: 'Bridging the semantic gap between a static model and dynamic private data.',
+                content: `
+                    <h3 class="text-2xl font-bold mb-6">Core Definition</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                        Retrieval-Augmented Generation (RAG) is a framework that retrieves relevant information from a knowledge base to "ground" the LLM's response. It effectively solves the problem of <strong>Static Knowledge</strong> and <strong>Hallucinations</strong>.
+                    </p>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-8 rounded-xl mb-10">
+                        <h4 class="text-blue-700 font-bold text-xs uppercase tracking-widest mb-3">The Student Analogy</h4>
+                        <p class="text-blue-900 text-xl font-medium italic">
+                            "A base LLM is a student in a closed-book exam. RAG is giving that student a textbook during the exam. They don't have to memorize your company's latest quarterly report; they just have to know how to look it up."
+                        </p>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-6">RAG Architecture Phases</h3>
+                    <div class="grid md:grid-cols-3 gap-6 mb-12">
+                        <div class="p-6 bg-white border border-slate-100 shadow-sm rounded-2xl">
+                            <span class="step-pill">Phase 1</span>
+                            <h5 class="font-bold mt-3">Ingestion</h5>
+                            <p class="text-xs text-slate-500 mt-2">Loading, splitting, and embedding documents into a Vector Database.</p>
+                        </div>
+                        <div class="p-6 bg-white border border-slate-100 shadow-sm rounded-2xl">
+                            <span class="step-pill">Phase 2</span>
+                            <h5 class="font-bold mt-3">Retrieval</h5>
+                            <p class="text-xs text-slate-500 mt-2">Searching for relevant content based on user query similarity.</p>
+                        </div>
+                        <div class="p-6 bg-white border border-slate-100 shadow-sm rounded-2xl">
+                            <span class="step-pill">Phase 3</span>
+                            <h5 class="font-bold mt-3">Generation</h5>
+                            <p class="text-xs text-slate-500 mt-2">Augmenting the prompt with context to produce a cited response.</p>
+                        </div>
+                    </div>
+                `,
+                code: `def basic_rag_pipeline(query, vector_store, llm):\n    # 1. Similarity Search\n    docs = vector_store.similarity_search(query, k=3)\n    \n    # 2. Build Augmented Prompt\n    context = "\\n".join([d.page_content for d in docs])\n    prompt = f"Context: {context}\\n\\nQuestion: {query}"\n    \n    # 3. Generate\n    return llm.invoke(prompt)`
+            },
+            {
+                id: 'impact',
+                cat: 'Foundations',
+                title: 'Business ROI & Impact',
+                icon: 'fa-chart-line',
+                desc: 'Real-world results from enterprise implementation.',
+                content: `
+                    <div class="grid md:grid-cols-2 gap-6 mb-10">
+                        <div class="p-6 bg-slate-900 text-white rounded-3xl shadow-xl">
+                            <h4 class="text-blue-400 font-bold mb-4 uppercase text-[10px] tracking-widest">Case Study: JPMorgan</h4>
+                            <p class="text-2xl font-extrabold mb-2">$150M / Year</p>
+                            <p class="text-sm opacity-70">Annual savings by implementing RAG for contract analysis instead of traditional manual research.</p>
+                        </div>
+                        <div class="p-6 bg-indigo-600 text-white rounded-3xl shadow-xl">
+                            <h4 class="text-indigo-200 font-bold mb-4 uppercase text-[10px] tracking-widest">Case Study: Microsoft</h4>
+                            <p class="text-2xl font-extrabold mb-2">94% Hallucination Drop</p>
+                            <p class="text-sm opacity-70">Reduction in AI hallucinations observed in Microsoft Copilot after grounding with enterprise data.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-white border border-slate-200 rounded-3xl mb-12">
+                        <h4 class="font-bold text-lg mb-4">Adoption Trends</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-xs font-bold w-32">Implementation</span>
+                                <div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="bg-blue-600 h-full" style="width: 85%"></div>
+                                </div>
+                                <span class="text-xs font-bold">6-8 Weeks</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-xs font-bold w-32">Avg. ROI</span>
+                                <div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="bg-indigo-500 h-full" style="width: 70%"></div>
+                                </div>
+                                <span class="text-xs font-bold">312%</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'pe-vs-ft-vs-rag',
+                cat: 'Foundations',
+                title: 'PE vs Fine-Tuning vs RAG',
+                icon: 'fa-sliders',
+                desc: 'Strategic guide for LLM customization methods.',
+                content: `
+                    <p class="mb-8">Choosing the right method depends on your data freshness needs and budget.</p>
+                    <div class="overflow-hidden border border-slate-200 rounded-2xl mb-12 shadow-sm">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 border-b border-slate-200">
+                                <tr>
+                                    <th class="p-5 font-bold">Feature</th>
+                                    <th class="p-5 font-bold">Fine-Tuning</th>
+                                    <th class="p-5 font-bold text-blue-600">RAG</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr><td class="p-5 font-semibold">Knowledge Freshness</td><td class="p-5">Static (Needs Retraining)</td><td class="p-5 text-blue-600 font-bold">Dynamic (Real-time)</td></tr>
+                                <tr><td class="p-5 font-semibold">Cost</td><td class="p-5">High ($1k - $100k)</td><td class="p-5 text-blue-600 font-bold">Medium (Database Infra)</td></tr>
+                                <tr><td class="p-5 font-semibold">Transparency</td><td class="p-5">Black Box</td><td class="p-5 text-blue-600 font-bold">Citable Sources</td></tr>
+                                <tr><td class="p-5 font-semibold">Complexity</td><td class="p-5">Requires ML Expertise</td><td class="p-5 text-blue-600 font-bold">Data Engineering</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: 'chunking',
+                cat: 'Ingestion Engine',
+                title: 'Semantic Chunking',
+                icon: 'fa-puzzle-piece',
+                desc: 'Beyond fixed sizes: splitting documents by logical meaning.',
+                content: `
+                    <p class="mb-6">Standard "Character Splitting" often cuts a sentence in the middle, losing context. <strong>Semantic Chunking</strong> evaluates sentence-to-sentence similarity to ensure logical continuity.</p>
+                    <div class="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl mb-8">
+                        <h5 class="text-emerald-900 font-bold flex items-center gap-2 mb-2"><i class="fas fa-check-circle"></i> Why it works</h5>
+                        <p class="text-emerald-800 text-sm italic">"Instead of saying 'break every 1000 characters', we say 'break when the subject matter changes significantly'."</p>
+                    </div>
+                    <div class="math-block">
+                        Similarity(S₁, S₂) = (A · B) / (||A|| ||B||) < Threshold → Break Chunk
+                    </div>
+                `,
+                code: `from langchain_experimental.text_splitter import SemanticChunker\nfrom langchain_openai.embeddings import OpenAIEmbeddings\n\n# Initialize with OpenAI embeddings to evaluate meaning\nchunker = SemanticChunker(\n    embeddings=OpenAIEmbeddings(),\n    breakpoint_threshold_type="percentile"\n)\ndocs = chunker.create_documents([raw_text])`
+            },
+            {
+                id: 'embeddings-math',
+                cat: 'Ingestion Engine',
+                title: 'Embeddings & Vector Math',
+                icon: 'fa-wave-square',
+                desc: 'The mathematical foundation of semantic search.',
+                content: `
+                    <p class="mb-6">Embeddings transform text into <strong>High-Dimensional Vectors</strong>. In this space, concepts like "King" and "Queen" are geometrically close, while "Apple" is far away.</p>
+                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 bg-white border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-xs uppercase text-slate-400 mb-2">Distance Metric</h5>
+                            <p class="text-sm font-bold">Cosine Similarity</p>
+                            <p class="text-xs text-slate-500 mt-1">Measures the angle between vectors, ignoring magnitude.</p>
+                        </div>
+                        <div class="p-4 bg-white border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-xs uppercase text-slate-400 mb-2">Distance Metric</h5>
+                            <p class="text-sm font-bold">Euclidean (L2) Distance</p>
+                            <p class="text-xs text-slate-500 mt-1">Measures the absolute straight-line distance.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'vector-db-deep',
+                cat: 'Ingestion Engine',
+                title: 'Vector DBs vs Stores',
+                icon: 'fa-database',
+                desc: 'Production-grade infrastructure selection.',
+                content: `
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="p-6 bg-white border border-slate-200 rounded-3xl">
+                            <h4 class="font-bold text-blue-600 mb-2">Vector Store</h4>
+                            <p class="text-sm text-slate-500 mb-4">FAISS, Annoy, Chroma. Best for prototyping and < 1M vectors.</p>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">IN-MEMORY</span>
+                        </div>
+                        <div class="p-6 bg-white border border-indigo-200 rounded-3xl">
+                            <h4 class="font-bold text-indigo-600 mb-2">Vector Database</h4>
+                            <p class="text-sm text-slate-500 mb-4">Pinecone, Milvus, Weaviate. Distributed systems for billions of vectors.</p>
+                            <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-full">ENTERPRISE CLOUD</span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'hybrid-search',
+                cat: 'Advanced Retrieval',
+                title: 'Hybrid Search Strategy',
+                icon: 'fa-bolt',
+                desc: 'Combining Keyword (Sparse) and Semantic (Dense) search.',
+                content: `
+                    <p class="mb-6">Hybrid search solves the "Domain Vocabulary" problem. While embeddings understand meaning, they might miss exact product codes or legal terms. Hybrid search uses <strong>BM25</strong> for keywords and <strong>Vectors</strong> for semantics.</p>
+                    <div class="math-block">
+                        Hybrid_Score = α * Vector_Score + (1 - α) * Keyword_Score
+                    </div>
+                `,
+                code: `from langchain.retrievers import EnsembleRetriever\nfrom langchain_community.retrievers import BM25Retriever\n\n# Initialize sparse and dense retrievers\nbm25 = BM25Retriever.from_documents(docs)\nvector = vectorstore.as_retriever()\n\n# Combine them 50/50\nretriever = EnsembleRetriever(retrievers=[bm25, vector], weights=[0.5, 0.5])`
+            },
+            {
+                id: 'mmr',
+                cat: 'Advanced Retrieval',
+                title: 'Maximal Marginal Relevance',
+                icon: 'fa-layer-group',
+                desc: 'Optimizing retrieval for diversity over simple similarity.',
+                content: `
+                    <p class="mb-6">MMR prevents the "Echo Chamber" effect. If the top 3 similar results are all paraphrases of each other, the LLM gets redundant context. MMR selects docs that are <strong>Relevant</strong> but <strong>Diverse</strong>.</p>
+                    <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
+                        <h5 class="text-amber-900 font-bold mb-2 uppercase text-xs">The Formula</h5>
+                        <p class="text-amber-800 text-xs font-mono">λ * Similarity(Q, D) - (1-λ) * Similarity(D, S)</p>
+                    </div>
+                `,
+                code: `retriever = vectorstore.as_retriever(\n    search_type="mmr",\n    search_kwargs={'k': 5, 'fetch_k': 20, 'lambda_mult': 0.5}\n)`
+            },
+            {
+                id: 're-ranking',
+                cat: 'Advanced Retrieval',
+                title: 'Cross-Encoder Re-Ranking',
+                icon: 'fa-sort-amount-down',
+                desc: 'Fine-tuning the order of retrieved results.',
+                content: `
+                    <p class="mb-6">Vector search is fast but uses an approximation. Re-ranking uses a "Cross-Encoder" model to compare the Query and Document pair in detail, providing a much more accurate relevance score.</p>
+                    <div class="flex flex-col gap-4 mb-10">
+                        <div class="flex items-center gap-4 p-4 bg-slate-100 rounded-xl">
+                            <span class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">1</span>
+                            <span class="text-sm font-medium">Retrieve top 100 via Vector Search (Bi-Encoder)</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-slate-100 rounded-xl">
+                            <span class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">2</span>
+                            <span class="text-sm font-medium">Re-score those 100 via Cross-Encoder (Cohere/BGE)</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-blue-100 text-blue-700 rounded-xl">
+                            <span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs">3</span>
+                            <span class="text-sm font-medium">Provide only the top 5 most accurate to the LLM</span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'hyde',
+                cat: 'Query Enhancement',
+                title: 'HyDE: Hypothetical Documents',
+                icon: 'fa-magic',
+                desc: 'Using hallucinations to improve search.',
+                content: `
+                    <p class="mb-6">Hypothetical Document Embeddings (HyDE) asks the LLM to write a "fake" answer to the user's question first. We then embed that <strong>Fake Answer</strong> to search for <strong>Real Context</strong>. This bridges the gap between question-syntax and answer-syntax.</p>
+                `,
+                code: `from langchain.chains import HypotheticalDocumentEmbedder\n\n# Create a fake answer generator template\nembeddings = HypotheticalDocumentEmbedder.from_llm(\n    llm, base_embeddings, "web_search"\n)\n# search_results = vectorstore.similarity_search(query, embeddings=embeddings)`
+            },
+            {
+                id: 'query-decomposition',
+                cat: 'Query Enhancement',
+                title: 'Query Decomposition',
+                icon: 'fa-sitemap',
+                desc: 'Breaking multi-part questions into atomic steps.',
+                content: `
+                    <p class="mb-6">A complex query like "How does JPMorgan's RAG saving compare to Microsoft's accuracy report?" requires two separate searches. Decomposition breaks this into Sub-Query A and Sub-Query B.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="p-4 border border-slate-200 rounded-xl bg-white flex items-center gap-3">
+                            <i class="fas fa-scissors text-slate-300"></i>
+                            <div>
+                                <h6 class="font-bold text-xs uppercase text-slate-400">Step 1</h6>
+                                <p class="text-sm">What was the saving reported by JPMorgan?</p>
+                            </div>
+                        </li>
+                        <li class="p-4 border border-slate-200 rounded-xl bg-white flex items-center gap-3">
+                            <i class="fas fa-scissors text-slate-300"></i>
+                            <div>
+                                <h6 class="font-bold text-xs uppercase text-slate-400">Step 2</h6>
+                                <p class="text-sm">What was the accuracy report from Microsoft?</p>
+                            </div>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                id: 'multi-modal',
+                cat: 'Advanced RAG',
+                title: 'Multi-Modal RAG',
+                icon: 'fa-images',
+                desc: 'Processing Text, Images, and Charts simultaneously.',
+                content: `
+                    <p class="mb-6">Multi-modal RAG uses models like <strong>CLIP</strong> to embed both images and text into the <strong>same vector space</strong>. This allows a user to ask questions about a chart inside a PDF.</p>
+                    <div class="bg-indigo-900 text-white p-8 rounded-3xl shadow-xl mb-12">
+                        <h4 class="font-bold mb-4 flex items-center gap-2 text-indigo-300"><i class="fas fa-microchip"></i> CLIP Architecture</h4>
+                        <p class="text-sm opacity-80 leading-relaxed italic">"Contrastive Language-Image Pre-Training ensures that the vector for the word 'Golden Retriever' is almost identical to the vector for an image of a Golden Retriever dog."</p>
+                    </div>
+                `
+            },
+            {
+                id: 'agentic-ai',
+                cat: 'Agentic Frameworks',
+                title: 'AI Agents vs Agentic AI',
+                icon: 'fa-robot',
+                desc: 'Individual tools vs collaborative autonomous systems.',
+                content: `
+                    <div class="grid md:grid-cols-2 gap-8 mb-10">
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+                            <h5 class="font-bold text-slate-400 uppercase text-[10px] mb-2 tracking-widest">AI Agent</h5>
+                            <p class="text-sm text-slate-600 leading-relaxed">A single program designed to perform a specific task (e.g., "Look up the weather"). Follows rigid tool-calling rules.</p>
+                        </div>
+                        <div class="p-6 bg-blue-600 text-white rounded-2xl">
+                            <h5 class="font-bold text-blue-200 uppercase text-[10px] mb-2 tracking-widest">Agentic AI</h5>
+                            <p class="text-sm opacity-90 leading-relaxed">A system of multiple agents that can reason, plan, reflect, and adapt their behavior based on intermediate results.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'langgraph',
+                cat: 'Agentic Frameworks',
+                title: 'LangGraph Framework',
+                icon: 'fa-project-diagram',
+                desc: 'The backbone of stateful multi-agent workflows.',
+                content: `
+                    <p class="mb-6">LangGraph models AI logic as a <strong>Directed Acyclic Graph (DAG)</strong>. It allows for "cycles" (loops), where an agent can try a task again if the previous attempt failed evaluation.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 bg-slate-100 rounded-xl">
+                            <h6 class="font-bold text-xs mb-1">Nodes</h6>
+                            <p class="text-[10px] text-slate-500 italic">Function (e.g., 'retrieve_docs')</p>
+                        </div>
+                        <div class="p-4 bg-slate-100 rounded-xl">
+                            <h6 class="font-bold text-xs mb-1">Edges</h6>
+                            <p class="text-[10px] text-slate-500 italic">Conditional path (if accurate -> generate)</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'react-arch',
+                cat: 'Agentic Frameworks',
+                title: 'ReAct Agent Architecture',
+                icon: 'fa-sync',
+                desc: 'The "Reason + Act" loop for autonomous agents.',
+                content: `
+                    <p class="mb-8">ReAct is the fundamental pattern for agents. The model follows a three-step cycle until it reaches a final answer.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl">
+                            <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-bold">1</div>
+                            <div><span class="font-bold">Thought:</span> The LLM reasons about what to do next.</div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl">
+                            <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold">2</div>
+                            <div><span class="font-bold">Action:</span> The LLM calls a tool (e.g., Wikipedia API).</div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl">
+                            <div class="w-10 h-10 bg-green-500 text-white rounded-xl flex items-center justify-center font-bold">3</div>
+                            <div><span class="font-bold">Observation:</span> The LLM sees the tool output and loops back to step 1.</div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'crag',
+                cat: 'Agentic Patterns',
+                title: 'Corrective RAG (CRAG)',
+                icon: 'fa-shield-virus',
+                desc: 'Self-grading and corrective web-search fallback.',
+                content: `
+                    <p class="mb-6">CRAG introduces a <strong>Retrieval Evaluator</strong>. If the retrieved documents are deemed irrelevant by the grading model, the system automatically triggers a <strong>Web Search</strong> to find better info.</p>
+                    <div class="bg-red-50 border border-red-100 p-6 rounded-2xl mb-8">
+                        <h6 class="text-red-700 font-bold mb-2 uppercase text-xs">Self-Grading Step</h6>
+                        <p class="text-red-800 text-sm">LLM: "Does this context actually answer the user's question about product X?" -> Score: 0.1 -> Result: Irrelevant -> <strong>ACTION: Trigger TAVILY Web Search.</strong></p>
+                    </div>
+                `
+            },
+            {
+                id: 'adaptive-rag',
+                cat: 'Agentic Patterns',
+                title: 'Adaptive RAG',
+                icon: 'fa-random',
+                desc: 'Dynamic routing based on query complexity.',
+                content: `
+                    <p class="mb-6">Adaptive RAG routes the query to different workflows based on its difficulty. Simple facts go to a basic RAG chain; complex multi-part questions go to an Agentic workflow.</p>
+                    <div class="flex justify-between items-center bg-white p-6 border border-slate-200 rounded-2xl mb-8">
+                        <div class="text-center">
+                            <div class="text-[10px] font-bold text-slate-400 mb-1">QUERY</div>
+                            <div class="p-2 bg-slate-100 rounded">"Who is CEO?"</div>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right text-slate-300 text-2xl"></i>
+                        <div class="text-center">
+                            <div class="text-[10px] font-bold text-blue-400 mb-1">ROUTE</div>
+                            <div class="p-2 bg-blue-600 text-white rounded text-xs font-bold">Simple RAG</div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'multi-agent-systems',
+                cat: 'Agentic Patterns',
+                title: 'Multi-Agent Network',
+                icon: 'fa-users',
+                desc: 'Coordinating "Researcher" and "Writer" agents.',
+                content: `
+                    <p class="mb-6">A single agent often struggles with too many tools. Multi-agent systems use a <strong>Supervisor Agent</strong> that acts as a Project Manager, delegating work to specialized sub-agents.</p>
+                    <div class="p-6 bg-slate-900 rounded-3xl text-white mb-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">PM</div>
+                            <div class="flex-1 h-px bg-white/20"></div>
+                            <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-[10px]">DocGen</div>
+                            <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-[10px]">Research</div>
+                            <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-[10px]">Review</div>
+                        </div>
+                        <p class="text-xs opacity-60 font-mono tracking-tighter italic">// Supervisor handles state and routes next step based on node output</p>
+                    </div>
+                `
+            },
+            {
+                id: 'cache-augmented',
+                cat: 'Advanced Patterns',
+                title: 'CAG: Cache-Augmented Generation',
+                icon: 'fa-hdd',
+                desc: 'Optimizing costs and speed with semantic caching.',
+                content: `
+                    <p class="mb-6">Instead of retrieving from a DB every time, CAG checks if a similar question has been asked recently. If the <strong>Semantic Similarity</strong> between the current query and a cached query is > 0.95, we return the cached answer instantly.</p>
+                `,
+                code: `from langchain.cache import SemanticCache\n\n# Initialize cache using vectors\nset_llm_cache(SemanticCache(\n    embedding=OpenAIEmbeddings(),\n    vectorstore=FAISS_store\n))`
+            },
+            {
+                id: 'graph-rag',
+                cat: 'Advanced Patterns',
+                title: 'Graph RAG & Neo4j',
+                icon: 'fa-network-wired',
+                desc: 'Structure-aware retrieval for complex entity relationships.',
+                content: `
+                    <p class="mb-6">Knowledge Graphs (KG) enable <strong>Multi-hop Reasoning</strong>. A vector search can find documents about "Company X", but a Graph can find "The CEO of the parent company of Company X" through structural links.</p>
+                    <div class="math-block">
+                        MATCH (c:Company {name: 'XYZ'})-[:OWNED_BY]->(p:Parent)-[:HAS_CEO]->(ceo:Person) RETURN ceo
+                    </div>
+                    <div class="p-4 bg-indigo-50 text-indigo-700 rounded-xl border border-indigo-100 text-sm italic">
+                        "Neo4j is currently the industry gold-standard for implementing structural Graph RAG."
+                    </div>
+                `
+            },
+            {
+                id: 'eval-ragas',
+                cat: 'Evaluation Frameworks',
+                title: 'Evaluation (RAGAS)',
+                icon: 'fa-check-double',
+                desc: 'Measuring the RAG Triad: Faithfulness, Relevance, and Groundedness.',
+                content: `
+                    <p class="mb-8">Evaluation determines the production readiness of your system. RAGAS uses an LLM-as-a-Judge to measure three critical metrics:</p>
+                    <div class="space-y-4 mb-10">
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-white">
+                            <h6 class="font-bold text-slate-800">1. Faithfulness</h6>
+                            <p class="text-xs text-slate-500">Is the answer derived <strong>only</strong> from the retrieved context? (Prevents Hallucinations)</p>
+                        </div>
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-white">
+                            <h6 class="font-bold text-slate-800">2. Answer Relevance</h6>
+                            <p class="text-xs text-slate-500">Does the generated answer directly address the user's question?</p>
+                        </div>
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-white">
+                            <h6 class="font-bold text-slate-800">3. Context Precision</h6>
+                            <p class="text-xs text-slate-500">Are the retrieved documents actually useful for generating the answer?</p>
+                        </div>
+                    </div>
+                `,
+                code: `from ragas import evaluate\nfrom ragas.metrics import faithfulness, answer_relevancy\n\n# Run evaluation on your RAG outputs\nresults = evaluate(\n    dataset,\n    metrics=[faithfulness, answer_relevancy]\n)`
+            }
+        ];
+
+        // State & Rendering
+        let activeId = 'intro';
+
+        function renderSidebar(searchFilter = '') {
+            const menu = document.getElementById('navMenu');
+            menu.innerHTML = '';
+            
+            const cats = [...new Set(modules.map(m => m.cat))];
+            
+            cats.forEach(cat => {
+                const items = modules.filter(m => 
+                    m.cat === cat && 
+                    (m.title.toLowerCase().includes(searchFilter.toLowerCase()) || 
+                     m.desc.toLowerCase().includes(searchFilter.toLowerCase()))
+                );
+
+                if (items.length > 0) {
+                    const group = document.createElement('div');
+                    group.innerHTML = `
+                        <h3 class="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em] mb-4 px-2">${cat}</h3>
+                        <div class="space-y-1">
+                            ${items.map(item => `
+                                <button onclick="selectModule('${item.id}')" 
+                                    class="nav-link w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm text-slate-500 hover:text-slate-900 transition-all ${item.id === activeId ? 'active' : ''}">
+                                    <i class="fas ${item.icon} w-5 text-center text-slate-400 group-hover:text-blue-500 transition-colors"></i>
+                                    <span class="truncate">${item.title}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    `;
+                    menu.appendChild(group);
+                }
+            });
+        }
+
+        function selectModule(id) {
+            activeId = id;
+            const mod = modules.find(m => m.id === id);
+            
+            // Header
+            document.getElementById('headerCat').innerText = mod.cat;
+            document.getElementById('headerTitle').innerText = mod.title;
+            
+            // Progress Update
+            const idx = modules.findIndex(m => m.id === id);
+            const progress = ((idx + 1) / modules.length) * 100;
+            document.getElementById('progBar').style.width = `${progress}%`;
+            document.getElementById('progText').innerText = `${idx + 1} of ${modules.length} modules complete`;
+
+            const container = document.getElementById('content');
+            container.innerHTML = `
+                <div class="animate-fade">
+                    <div class="flex items-start gap-5 mb-8">
+                        <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center text-2xl shrink-0">
+                            <i class="fas ${mod.icon}"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mb-1 block">${mod.cat} Masterclass</span>
+                            <h2 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">${mod.title}</h2>
+                        </div>
+                    </div>
+
+                    <p class="text-xl text-slate-500 font-medium leading-relaxed mb-12">${mod.desc}</p>
+
+                    <div class="prose prose-slate max-w-none">
+                        ${mod.content}
+                    </div>
+
+                    ${mod.code ? `
+                        <div class="mt-16 group">
+                            <div class="flex items-center justify-between px-6 py-4 bg-slate-800 text-slate-300 rounded-t-2xl text-[11px] font-mono border-b border-white/5">
+                                <span class="flex items-center gap-2 tracking-widest uppercase font-bold text-blue-400">
+                                    <i class="fas fa-terminal"></i> Implementation logic
+                                </span>
+                                <button onclick="copyCode(this)" class="copy-btn uppercase font-bold tracking-widest">Copy Snippet</button>
+                            </div>
+                            <div class="bg-slate-900 p-8 rounded-b-2xl overflow-x-auto shadow-2xl shadow-indigo-500/10">
+                                <pre class="code-font text-indigo-200 text-sm leading-8"><code>${mod.code}</code></pre>
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <div class="mt-20 pt-10 border-t border-slate-200 flex justify-between gap-6">
+                        <button onclick="navigate(${idx - 1})" class="flex-1 p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:bg-white transition-all text-left shadow-sm group ${idx === 0 ? 'opacity-30 pointer-events-none' : ''}">
+                            <div class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-2">Previous Module</div>
+                            <div class="text-lg font-bold text-slate-900 group-hover:text-blue-600">Review Concepts</div>
+                        </button>
+                        <button onclick="navigate(${idx + 1})" class="flex-1 p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:bg-white transition-all text-right shadow-sm group ${idx === modules.length - 1 ? 'opacity-30 pointer-events-none' : ''}">
+                            <div class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-2">Up Next</div>
+                            <div class="text-lg font-bold text-slate-900 group-hover:text-blue-600">Advance Curriculum</div>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            renderSidebar(document.getElementById('topicSearch').value);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.innerWidth < 1024) toggleSidebar(false);
+        }
+
+        function navigate(idx) {
+            if (idx >= 0 && idx < modules.length) selectModule(modules[idx].id);
+        }
+
+        function copyCode(btn) {
+            const code = btn.closest('.group').querySelector('code').innerText;
+            const el = document.createElement('textarea');
+            el.value = code;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            
+            const original = btn.innerText;
+            btn.innerText = 'COPIED!';
+            btn.style.color = '#4ade80';
+            setTimeout(() => {
+                btn.innerText = original;
+                btn.style.color = '#fff';
+            }, 2000);
+        }
+
+        // Sidebar Toggle
+        const sidebar = document.getElementById('sidebar');
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        let sidebarOpen = false;
+
+        function toggleSidebar(state) {
+            sidebarOpen = state;
+            sidebar.classList.toggle('-translate-x-full', !sidebarOpen);
+            mobileBtn.innerHTML = sidebarOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        }
+
+        mobileBtn.addEventListener('click', () => toggleSidebar(!sidebarOpen));
+
+        // Search Input
+        document.getElementById('topicSearch').addEventListener('input', (e) => {
+            renderSidebar(e.target.value);
+        });
+
+        // App Init
+        window.onload = () => {
+            renderSidebar();
+            selectModule('intro');
+        };
+    </script>
+</body>
+</html>
