@@ -1,6 +1,6 @@
 from typing import Dict, Any, List, Optional
 import logging
-from openai import OpenAI
+from langchain_openai import OpenAI
 import json
 
 logging.basicConfig(level=logging.INFO)

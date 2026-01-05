@@ -1,15 +1,15 @@
 import asyncio
-from fastmcp import FastMCPClient
+from fastmcp import Client, FastMCP
 from typing import Dict, Any
 import logging
 import json
 
 async def main():
     # Connect to the MCP server
-    client = FastMCPClient("RAG Tutor")
+    client = Client("http://localhost:8000")
     
     # Get system status
-    status = await client.call("get_system_status")
+    status = await client.call_tool("get_system_status")
     print("System Status:", status)
     
     # Ingest some documents (replace with your directory)
@@ -18,7 +18,7 @@ async def main():
     
     # Ask a question
     question = "What is machine learning and how does it differ from traditional programming?"
-    response = await client.call("ask_question", {"question": question})
+    response = await client.call_tool_mcp("ask_question", {"question": question})
     
     print("\n" + "="*50)
     print("QUESTION:", question)

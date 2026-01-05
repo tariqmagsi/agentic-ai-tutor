@@ -9,7 +9,7 @@ load_dotenv()
 class Config:
     # OpenAI Configuration
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
-    OPENAI_MODEL: str = "gpt-4-turbo-preview"
+    OPENAI_MODEL: str = "gpt-5"
     
     # Vector Store Configuration
     CHROMA_PERSIST_DIRECTORY: str = "./chroma_db"
@@ -20,4 +20,10 @@ class Config:
     MAX_RETRIEVAL_DOCS: int = 5
     TEMPERATURE: float = 0.1
 
+    class Server:
+        PORT = 8000
+        SSE_PATH = "/sse"
+        TRANSPORT = "sse"
+
 config = Config()
+

@@ -6,12 +6,12 @@ import json
 import os
 from contextlib import asynccontextmanager
 
-from config import config
-from vector_store.verctor_store import VectorStoreManager
-from data_ingestion.data_ingestion import DataIngestor
-from agents.question_understanding_agent import QuestionUnderstandingAgent
-from agents.retrieval_agent import RetrievalAgent
-from agents.tutoring_agent import TutoringAgent
+from src.config.config import config
+from src.vector_store.vector_store import VectorStoreManager
+from src.data_ingestion.data_ingestion import DataIngestor
+from src.agents.question_understanding_agent import QuestionUnderstandingAgent
+from src.agents.retrieval_agent import RetrievalAgent
+from src.agents.tutoring_agent import TutoringAgent
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ retrieval_agent = RetrievalAgent(vector_store, config)
 tutoring_agent = TutoringAgent(config)
 
 # Create FastMCP server
-mcp = FastMCP("RAG Tutor", description="An agentic RAG tutoring system with multiple specialized agents")
+mcp = FastMCP("RAG Tutor")
 
 @asynccontextmanager
 async def lifespan():
@@ -190,6 +190,4 @@ async def get_system_status() -> Dict[str, Any]:
         }
     }
 
-if __name__ == "__main__":
-    # Run the MCP server
-    mcp.run()
+mcp_server=mcp.run(transport=config.Server.TRANSPORT)
