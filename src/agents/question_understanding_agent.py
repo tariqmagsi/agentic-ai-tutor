@@ -1,7 +1,8 @@
 from typing import Dict, Any, List, Optional
 import logging
-from langchain_openai import OpenAI
 import json
+from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_core.output_parsers import JsonOutputParser
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -9,9 +10,10 @@ logger = logging.getLogger(__name__)
 class QuestionUnderstandingAgent:
     """Analyzes and understands the user's question"""
     
-    def __init__(self, config):
+    def __init__(self, config, openai_client):
         self.config = config
-        self.client = OpenAI(api_key=config.OPENAI_API_KEY)
+        self.client = openai_client
+        self.parser = JsonOutputParser()
     
     def analyze_question(self, question: str) -> Dict[str, Any]:
         """Analyze the question to extract key components"""
@@ -27,17 +29,15 @@ class QuestionUnderstandingAgent:
         Return your analysis in JSON format."""
         
         try:
-            response = self.client.chat.completions.create(
-                model=self.config.OPENAI_MODEL,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": f"Question: {question}"}
-                ],
-                temperature=0.1,
-                response_format={"type": "json_object"}
-            )
+
+            chain = self.client | self.parser
+
+            response = chain.invoke([
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=f"Question: {question}")
+            ])
             
-            analysis = json.loads(response.choices[0].message.content)
+            analysis = json.loads(response.content)
             logger.info(f"Question analysis completed: {analysis}")
             return analysis
             
@@ -66,18 +66,15 @@ class QuestionUnderstandingAgent:
         
         try:
             context = f"Question: {question}\nAnalysis: {json.dumps(analysis, indent=2)}"
+
+            chain = self.client | self.parser
+
+            response = chain.invoke([
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=context)
+            ])
             
-            response = self.client.chat.completions.create(
-                model=self.config.OPENAI_MODEL,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": context}
-                ],
-                temperature=0.3,
-                response_format={"type": "json_object"}
-            )
-            
-            result = json.loads(response.choices[0].message.content)
+            result = json.loads(response.content)
             queries = result.get("queries", [question])
             
             # Ensure we have at least the original question

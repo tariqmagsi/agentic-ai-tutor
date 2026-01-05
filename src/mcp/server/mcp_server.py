@@ -7,6 +7,7 @@ import os
 from contextlib import asynccontextmanager
 
 from src.config.config import config
+from src.common.openai_client import openai_client
 from src.vector_store.vector_store import VectorStoreManager
 from src.data_ingestion.data_ingestion import DataIngestor
 from src.agents.question_understanding_agent import QuestionUnderstandingAgent
@@ -19,9 +20,9 @@ logger = logging.getLogger(__name__)
 # Initialize components
 vector_store = VectorStoreManager(config)
 data_ingestor = DataIngestor()
-question_agent = QuestionUnderstandingAgent(config)
-retrieval_agent = RetrievalAgent(vector_store, config)
-tutoring_agent = TutoringAgent(config)
+question_agent = QuestionUnderstandingAgent(config, openai_client)
+retrieval_agent = RetrievalAgent(vector_store, config, openai_client)
+tutoring_agent = TutoringAgent(config, openai_client)
 
 # Create FastMCP server
 mcp = FastMCP("RAG Tutor")

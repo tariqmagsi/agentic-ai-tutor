@@ -1,7 +1,8 @@
 from typing import Dict, Any, List, Optional
 import logging
-from openai import OpenAI
 import json
+from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_core.output_parsers import JsonOutputParser
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -9,9 +10,9 @@ logger = logging.getLogger(__name__)
 class TutoringAgent:
     """Main tutoring agent that generates responses based on retrieved information"""
     
-    def __init__(self, config):
+    def __init__(self, config, openai_client):
         self.config = config
-        self.client = OpenAI(api_key=config.OPENAI_API_KEY)
+        self.client = openai_client
     
     def generate_response(self, question: str, analysis: Dict[str, Any], 
                          documents: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -52,17 +53,12 @@ Relevant Documents:
 Please provide a comprehensive tutoring response:"""
         
         try:
-            response = self.client.chat.completions.create(
-                model=self.config.OPENAI_MODEL,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_content}
-                ],
-                temperature=self.config.TEMPERATURE,
-                max_tokens=1500
-            )
+            response = self.client.invoke([
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=user_content)
+            ]) 
             
-            answer = response.choices[0].message.content
+            answer = response.content
             
             # Generate metadata about the response
             metadata = {

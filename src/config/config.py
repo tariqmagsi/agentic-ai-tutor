@@ -2,6 +2,7 @@ import os
 from dataclasses import dataclass
 from typing import List
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI as OpenAI   
 
 load_dotenv()
 
@@ -9,7 +10,7 @@ load_dotenv()
 class Config:
     # OpenAI Configuration
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
-    OPENAI_MODEL: str = "gpt-5"
+    OPENAI_MODEL: str = "gpt-5.2"
     
     # Vector Store Configuration
     CHROMA_PERSIST_DIRECTORY: str = "./chroma_db"
