@@ -1,7 +1,8 @@
 from typing import Dict, Any, List, Optional
 import logging
-from openai import OpenAI
 import json
+from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_core.output_parsers import JsonOutputParser
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -9,10 +10,11 @@ logger = logging.getLogger(__name__)
 class RetrievalAgent:
     """Handles retrieval of relevant information from vector store"""
     
-    def __init__(self, vector_store_manager, config):
+    def __init__(self, vector_store_manager, config, openai_client):
         self.vector_store = vector_store_manager
         self.config = config
-        self.client = OpenAI(api_key=config.OPENAI_API_KEY)
+        self.client = openai_client
+        self.parser = JsonOutputParser()
     
     def retrieve_relevant_docs(self, queries: List[str], n_results: int = 5) -> List[Dict[str, Any]]:
         """Retrieve documents using multiple queries"""
@@ -61,17 +63,12 @@ class RetrievalAgent:
             
             context = f"Question: {question}\n\nDocuments:\n" + "\n---\n".join(doc_list)
             
-            response = self.client.chat.completions.create(
-                model=self.config.OPENAI_MODEL,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": context}
-                ],
-                temperature=0.1,
-                response_format={"type": "json_object"}
-            )
+            response = self.client.invoke([
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=context)
+            ])
             
-            scores_data = json.loads(response.choices[0].message.content)
+            scores_data = json.loads(response.content)
             scores = scores_data.get("scores", [])
             
             # Update document scores
