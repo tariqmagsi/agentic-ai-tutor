@@ -7,6 +7,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.docstore.document import Document
 import numpy as np
 import logging
+from src.config.config import VectorStoreConfig
+from src.data_processor.embeddings import EmbeddingManager
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

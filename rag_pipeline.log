@@ -1,0 +1,144 @@
+2026-01-06 23:02:23,144 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-06 23:02:23,145 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-06 23:02:29,101 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-06 23:02:29,541 - docket.worker - INFO - Starting worker 'F09-RTGA-242#33708' with the following tasks:
+2026-01-06 23:02:29,543 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-06 23:02:29,544 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-06 23:02:29,545 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-06 23:03:24,774 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-06 23:03:24,775 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-06 23:03:33,822 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-06 23:03:34,049 - docket.worker - INFO - Starting worker 'F09-RTGA-242#36128' with the following tasks:
+2026-01-06 23:03:34,050 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-06 23:03:34,051 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-06 23:03:34,051 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-06 23:16:35,229 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:16:35,239 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-06 23:16:35,249 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:16:35,251 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-06 23:16:36,921 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-06 23:16:36,922 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,102 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,104 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,105 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,107 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,109 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,112 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,114 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,117 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,119 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,121 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,123 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,125 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,126 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,127 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:16:37,127 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-06 23:16:37,128 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-06 23:22:49,877 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:22:49,892 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-06 23:22:49,905 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:22:49,907 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-06 23:22:51,693 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-06 23:22:51,694 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,696 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,697 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,699 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,700 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,702 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,705 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,707 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,710 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,712 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,714 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,716 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,718 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,719 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,719 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:22:51,720 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-06 23:22:51,721 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-06 23:23:31,628 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:23:31,638 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-06 23:23:31,648 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:23:31,650 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-06 23:23:33,041 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-06 23:23:33,042 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,044 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,047 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,049 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,050 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,052 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,055 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,057 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,060 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,062 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,064 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,067 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,069 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,070 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,071 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:23:33,072 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-06 23:23:33,073 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-06 23:24:21,717 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-06 23:24:21,717 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-06 23:24:26,068 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-06 23:24:26,272 - docket.worker - INFO - Starting worker 'F09-RTGA-242#1444' with the following tasks:
+2026-01-06 23:24:26,273 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-06 23:24:26,274 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-06 23:24:26,274 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-06 23:24:46,676 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:24:46,693 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-06 23:24:46,713 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:24:46,716 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-06 23:24:48,439 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-06 23:24:48,440 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,578 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,580 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,580 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,582 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,583 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,585 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,586 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,588 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,592 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,596 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,599 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,602 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,604 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,605 - src.data_processor.processing - ERROR - Error chunking document with hybrid strategy: 'DocumentProcessor' object has no attribute 'hybrid_chunker'
+2026-01-06 23:24:48,605 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-06 23:24:48,606 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-06 23:27:24,801 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-06 23:27:24,802 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-06 23:27:28,914 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-06 23:27:29,138 - docket.worker - INFO - Starting worker 'F09-RTGA-242#35120' with the following tasks:
+2026-01-06 23:27:29,140 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-06 23:27:29,140 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-06 23:27:29,141 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-06 23:27:44,791 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:27:44,803 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-06 23:27:44,813 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-06 23:27:44,815 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-06 23:27:46,348 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-06 23:27:46,352 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-06 23:27:46,353 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-07 00:40:45,750 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 00:40:45,750 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 00:40:49,146 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 00:40:49,273 - docket.worker - INFO - Starting worker 'F09-RTGA-242#17996' with the following tasks:
+2026-01-07 00:40:49,274 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 00:40:49,274 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 00:40:49,275 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 00:41:26,841 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 00:41:26,841 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 00:41:30,089 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 00:41:30,214 - docket.worker - INFO - Starting worker 'F09-RTGA-242#30872' with the following tasks:
+2026-01-07 00:41:30,215 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 00:41:30,215 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 00:41:30,216 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 00:41:54,492 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 00:41:54,499 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 00:41:54,504 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 00:41:54,505 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 00:41:55,748 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 00:41:55,751 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-07 00:41:55,752 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data

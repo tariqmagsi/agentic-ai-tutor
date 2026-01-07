@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 from src.config.config import config
 from src.common.openai_client import openai_client
 from src.vector_store.vector_store import VectorStoreManager
-from src.data_ingestion.data_ingestion import DataIngestor
+from src.data_processor.ingestion import DocumentIngestor as DataIngestor
 from src.agents.question_understanding_agent import QuestionUnderstandingAgent
 from src.agents.retrieval_agent import RetrievalAgent
 from src.agents.tutoring_agent import TutoringAgent
@@ -49,7 +49,7 @@ async def ingest_documents(directory_path: str) -> Dict[str, Any]:
     try:
         if not os.path.exists(directory_path):
             return {"success": False, "error": f"Directory not found: {directory_path}"}
-        
+        print("processing 1")
         documents = data_ingestor.ingest_directory(directory_path)
         
         if documents:
