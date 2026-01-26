@@ -1,11 +1,9 @@
 
-import hashlib
 import re
-from typing import List, Dict, Any, Callable
-from langchain_core.documents import Document
+from typing import List, Dict, Callable
 from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter
 from src.config.config import ChunkConfig
-from src.utils.utils import get_logger, calculate_token_count, clean_text
+from src.utils.utils import get_logger
 
 logger = get_logger(__name__)
 

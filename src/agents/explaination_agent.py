@@ -7,8 +7,8 @@ from langchain_core.output_parsers import JsonOutputParser
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class TutoringAgent:
-    """Main tutoring agent that generates responses based on retrieved information"""
+class ExplainationAgent:
+    """Main Explaination agent that generates responses based on retrieved information"""
     
     def __init__(self, config, openai_client):
         self.config = config

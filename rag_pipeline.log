@@ -737,3 +737,16 @@
 2026-01-24 11:22:11,422 - src.agents.retrieval_agent - INFO - Reranked 5 documents
 2026-01-24 11:22:27,632 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-01-24 11:22:27,636 - src.agents.tutoring_agent - INFO - Generated tutoring response (3023 chars)
+2026-01-26 22:28:23,453 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-26 22:28:23,489 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-26 22:28:23,503 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-26 22:28:23,505 - src.mcp.server.mcp_server - INFO - Processing question: Can you help me solve this unit test? What is the expected output of the function when given input X?
+2026-01-26 22:28:30,676 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-26 22:28:30,704 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Determining the expected output of a function for a unit test given a specific input (X)', 'key_concepts_mentioned': ['unit test', 'solve/fix unit test', 'expected output', 'function behavior', 'input X'], 'question_type': 'Analytical (test-case/expected-result derivation), with missing factual details', 'complexity_level': 'Intermediate (depends on function logic and test context; currently underspecified)', 'implicit_assumptions_or_context_needed': ['The function definition/implementation is available', 'The type and value of input X are known', 'Any dependencies, global state, or environment assumptions are specified', 'The unit test framework and assertion expectations (e.g., equality, exception, tolerance) are known', 'Edge-case handling requirements (null/None, empty input, invalid input) are defined'], 'potential_related_concepts': ['test-driven development (TDD)', 'arrange-act-assert pattern', 'mocking/stubbing dependencies', 'property-based testing', 'boundary and edge-case analysis', 'deterministic vs nondeterministic outputs (time, randomness, I/O)', 'input validation and error/exception expectations', 'floating point comparison tolerances', 'side effects and state mutation', 'code coverage and branch/path testing']}
+2026-01-26 22:28:37,868 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-26 22:28:37,901 - src.agents.question_understanding_agent - INFO - Generated 21 search queries
+2026-01-26 22:28:38,262 - src.agents.retrieval_agent - INFO - Retrieved 14 unique documents
+2026-01-26 22:28:40,540 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-26 22:28:40,543 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-26 22:28:55,092 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-26 22:28:55,095 - src.agents.tutoring_agent - INFO - Generated tutoring response (3208 chars)
