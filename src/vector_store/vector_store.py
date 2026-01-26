@@ -77,40 +77,36 @@ class VectorStoreManager:
         source_hash = hashlib.md5(source.encode()).hexdigest()[:12]
         return f"{source_hash}_{content_hash}_{chunk_index}"
     
-    def add_documents(self, documents: List[Dict[str, Any]]):
+    def add_documents(self, documents: List[Document]):
         """Add documents to vector store using LangChain's Chroma integration"""
         all_chunks = []
         all_metadatas = []
         all_ids = []
         
         for doc in documents:
-            content = doc.get("content", "")
-            source = doc.get("source", "unknown")
-            metadata = doc.get("metadata", {})
             
             # Create LangChain Document
-            langchain_doc = Document(
-                page_content=content,
-                metadata={**metadata, "source": source}
-            )
+            langchain_doc = doc
+            source = langchain_doc.metadata.get("source", "unknown_source")
             
             # Split document into chunks
             chunks = self.text_splitter.split_documents([langchain_doc])
             
             # Prepare chunks for addition
             for i, chunk in enumerate(chunks):
+                print("ok1")
                 chunk_id = self._generate_document_id(
                     chunk.page_content, 
                     source, 
                     i
                 )
-                
+                print("ok2")
                 # Update chunk metadata
-                chunk.metadata.update({
-                    "chunk_index": i,
-                    "source": source,
-                    "document_id": doc.get("id", f"doc_{hash(source)[:8]}")
-                })
+                # chunk.metadata.update({
+                #     "chunk_index": i,
+                #     "source": source,
+                #     "document_id": langchain_doc.metadata.get("id", f"doc_{hash(source)[:8]}")
+                # })
                 
                 all_chunks.append(chunk)
                 all_ids.append(chunk_id)
@@ -123,7 +119,7 @@ class VectorStoreManager:
             )
             
             # Persist to disk
-            self.vector_store.persist()
+            # self.vector_store.persist()
             
             logger.info(f"Added {len(all_chunks)} document chunks to vector store")
         else:

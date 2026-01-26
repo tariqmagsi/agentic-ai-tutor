@@ -4,6 +4,7 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter
 from src.config.config import ChunkConfig
 from src.utils.utils import get_logger, calculate_token_count, clean_text
+from src.data_processor.hybrid_chunker import HybridChunker
 
 logger = get_logger(__name__)
 
@@ -12,6 +13,7 @@ class DocumentProcessor:
     
     def __init__(self, config: ChunkConfig = None):
         self.config = config or ChunkConfig()
+        self.hybrid_chunker = HybridChunker(self.config)
         
         self.text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=self.config.chunk_size,
@@ -33,11 +35,29 @@ class DocumentProcessor:
                 base_metadata.update(document.metadata)
             
             # Use hybrid chunker
-            chunks = self.text_splitter.split_text(cleaned_text)
+            chunks = self.hybrid_chunker.chunk(cleaned_text, strategy=strategy)
+
+            # Determin actual strategy used
+            actual_strategy = strategy if strategy != "auto" else self.hybrid_chunker.auto_select_strategy(cleaned_text)
+
+            # Create Document objects for each chunk
+            doc_chunks = []
+            for i, chunk in enumerate(chunks):
+                chunk_id = self.generate_chunk_id(base_metadata.get("document_id", "unknown"), chunk)
+                chunk_metadata = base_metadata.copy()
+                chunk_metadata.update({
+                    "chunk_id": chunk_id,
+                    "chunk_index": i,
+                    "total_chunks": len(chunks),
+                    "token_count": calculate_token_count(chunk),
+                    "char_count": len(chunk),
+                    "chunking_strategy": actual_strategy
+                })
+                doc_chunks.append(Document(page_content=chunk, metadata=chunk_metadata))
             
             logger.debug(f"Created {len(chunks)} chunks using strategy: {strategy}")
-            return chunks
-            
+            return doc_chunks
+
         except Exception as e:
             logger.error(f"Error chunking document with hybrid strategy: {e}")
             
@@ -57,7 +77,7 @@ class DocumentProcessor:
         for i, text in enumerate(texts):
             chunk_metadata = metadata.copy()
             chunk_metadata.update({
-                "chunk_id": self.generate_chunk_id(metadata.get("document_id", "unknown"), i),
+                "chunk_id": self.generate_chunk_id(metadata.get("document_id", "unknown"), text),
                 "total_chunks": len(texts),
                 "token_count": calculate_token_count(text),
                 "char_count": len(text),
@@ -93,10 +113,12 @@ class DocumentProcessor:
                 chunk_metadata = metadata.copy()
                 chunk_metadata.update(chunk.metadata)
                 chunk_metadata.update({
-                    "chunk_id": self.generate_chunk_id(metadata.get("document_id", "unknown"), i),
+                    "chunk_id": self.generate_chunk_id(metadata.get("document_id", "unknown"), chunk.page_content),
                     "total_chunks": len(md_chunks),
                     "type": "markdown",
-                    "chunking_strategy": "markdown_header"
+                    "chunking_strategy": "markdown_header",
+                    "token_count": calculate_token_count(chunk.page_content),
+                    "char_count": len(chunk.page_content)
                 })
                 chunks.append(Document(page_content=chunk.page_content, metadata=chunk_metadata))
             
@@ -108,15 +130,15 @@ class DocumentProcessor:
             # Fallback to paragraph chunking
             return self.chunk_document(Document(page_content=content), metadata, strategy="paragraph")
     
-    # def get_available_strategies(self) -> List[str]:
-    #     """Get list of available chunking strategies"""
-    #     return list(self.hybrid_chunker.strategies.keys())
+    def get_available_strategies(self) -> List[str]:
+        """Get list of available chunking strategies"""
+        return list(self.hybrid_chunker.strategies.keys())
     
-    # def chunk_with_specific_strategy(self, document: Document, 
-    #                                 strategy: str, 
-    #                                 metadata: Dict[str, Any] = None) -> List[Document]:
-    #     """Chunk document using a specific strategy"""
-    #     if strategy not in self.hybrid_chunker.strategies:
-    #         raise ValueError(f"Unknown strategy: {strategy}. Available: {self.get_available_strategies()}")
+    def chunk_with_specific_strategy(self, document: Document, 
+                                    strategy: str, 
+                                    metadata: Dict[str, Any] = None) -> List[Document]:
+        """Chunk document using a specific strategy"""
+        if strategy not in self.hybrid_chunker.strategies:
+            raise ValueError(f"Unknown strategy: {strategy}. Available: {self.get_available_strategies()}")
         
-    #     return self.chunk_document(document, metadata, strategy=strategy)
+        return self.chunk_document(document, metadata, strategy=strategy)
