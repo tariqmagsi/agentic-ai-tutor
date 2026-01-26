@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from langchain_core.documents import Document
 from langchain_community.document_loaders import (
     PyPDFLoader,
@@ -112,7 +112,7 @@ class DocumentIngestor:
             logger.error(f"Error loading JSON {file_path}: {e}")
             return []
     
-    def ingest_file(self, file_path: str, additional_metadata: Dict = None) -> List[Document]:
+    def ingest_file(self, file_path: str, additional_metadata: Optional[Dict[str, Any]] = None) -> List[Document]:
         """Ingest single file with processing"""
         try:
             logger.info(f"Ingesting file: {file_path}")
@@ -125,42 +125,63 @@ class DocumentIngestor:
                 return []
             
             # Process each document
-            all_chunks = []
+            processed_documents = []  # Changed from all_chunks to processed_documents
             for i, doc in enumerate(raw_docs):
                 # Prepare metadata
                 metadata = {
-                    "source": file_path,
+                    "source": str(file_path),
                     "filename": Path(file_path).name,
                     "file_type": Path(file_path).suffix[1:],
                     "document_index": i,
                     "ingestion_time": datetime.now().isoformat(),
-                    "document_id": generate_document_id(file_path, doc.page_content)
+                    "document_id": generate_document_id(str(file_path), doc.page_content)
                 }
                 
+                # Add original document metadata
+                if hasattr(doc, 'metadata') and doc.metadata:
+                    metadata.update(doc.metadata)
+                
+                # Add additional metadata if provided
                 if additional_metadata:
                     metadata.update(additional_metadata)
                 
-                if hasattr(doc, 'metadata'):
-                    metadata.update(doc.metadata)
-                
-                # Special handling for markdown
-                if Path(file_path).suffix.lower() == '.md':
+                # Process based on file type
+                file_suffix = Path(file_path).suffix.lower()
+                if file_suffix == '.md':
                     chunks = self.processor.chunk_markdown_with_headers(doc.page_content, metadata)
                 else:
-                    chunks = self.processor.chunk_document(doc, metadata)
+                    # Ensure doc has proper metadata for processing
+                    doc_with_metadata = Document(
+                        page_content=doc.page_content,
+                        metadata=metadata
+                    )
+                    chunks = self.processor.chunk_document(doc_with_metadata, metadata)
                 
-                all_chunks.extend(chunks)
+                # Convert all chunks to Document objects
+                for chunk in chunks:
+                    if isinstance(chunk, Document):
+                        processed_documents.append(chunk)
+                    else:
+                        # Assuming chunk has page_content and metadata attributes
+                        chunk_metadata = metadata.copy()
+                        if hasattr(chunk, 'metadata') and chunk.metadata:
+                            chunk_metadata.update(chunk.metadata)
+                        
+                        processed_documents.append(Document(
+                            page_content=chunk.page_content if hasattr(chunk, 'page_content') else str(chunk),
+                            metadata=chunk_metadata
+                        ))
             
-            logger.info(f"Created {len(all_chunks)} chunks from {len(raw_docs)} documents in {file_path}")
-            return all_chunks
+            logger.info(f"Created {len(processed_documents)} documents from {len(raw_docs)} raw documents in {file_path}")
+            return processed_documents  # Return List[Document]
             
         except Exception as e:
             logger.error(f"Error ingesting file {file_path}: {e}")
             return []
     
     def ingest_directory(self, directory_path: str, 
-                        recursive: bool = True,
-                        file_patterns: List[str] = None) -> List[Document]:
+                    recursive: bool = True,
+                    file_patterns: Optional[List[str]] = None) -> List[Document]:
         """Ingest all supported files from directory"""
         
         directory_path = Path(directory_path)
@@ -168,7 +189,7 @@ class DocumentIngestor:
         if not directory_path.exists():
             raise ValueError(f"Directory does not exist: {directory_path}")
         
-        all_chunks = []
+        all_documents = []  # Changed from all_chunks to all_documents
         
         # Walk through directory
         if recursive:
@@ -179,15 +200,28 @@ class DocumentIngestor:
         for file_path in file_iter:
             if file_path.is_file():
                 suffix = file_path.suffix.lower()
-                print("processing 1")
+                
                 # Check if file should be processed
                 if file_patterns:
                     if suffix[1:] not in file_patterns and suffix not in file_patterns:
                         continue
                 
                 if suffix in self.supported_extensions:
-                    chunks = self.ingest_file(str(file_path))
-                    all_chunks.extend(chunks)
+                    documents = self.ingest_file(str(file_path))  # Get documents directly
+                    all_documents.extend(documents)  # Extend with documents
         
-        logger.info(f"Ingested {len(all_chunks)} total chunks from {directory_path}")
-        return all_chunks
+        logger.info(f"Ingested {len(all_documents)} total documents from {directory_path}")
+        return all_documents  # Already List[Document]
+    
+    def validate_documents(self, documents: List[Document]) -> bool:
+        """Validate that all items in the list are Document objects"""
+        if not isinstance(documents, list):
+            logger.error(f"Expected list, got {type(documents)}")
+            return False
+        
+        for i, doc in enumerate(documents):
+            if not isinstance(doc, Document):
+                logger.error(f"Document at index {i} is not a Document object: {type(doc)}")
+                return False
+        
+        return True

@@ -64,7 +64,7 @@ class EmbeddingConfig:
 @dataclass
 class VectorStoreConfig:
     """Configuration for vector store"""
-    store_type: str = "faiss"  # faiss, chroma, qdrant
+    store_type: str = "chroma"
     persist_directory: str = "./vector_store"
     collection_name: str = "documents"
     similarity_metric: str = "cosine"

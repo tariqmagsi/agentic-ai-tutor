@@ -24,7 +24,6 @@ question_agent = QuestionUnderstandingAgent(config, openai_client)
 retrieval_agent = RetrievalAgent(vector_store, config, openai_client)
 tutoring_agent = TutoringAgent(config, openai_client)
 
-# Create FastMCP server
 mcp = FastMCP("RAG Tutor")
 
 @asynccontextmanager
@@ -51,7 +50,7 @@ async def ingest_documents(directory_path: str) -> Dict[str, Any]:
             return {"success": False, "error": f"Directory not found: {directory_path}"}
         print("processing 1")
         documents = data_ingestor.ingest_directory(directory_path)
-        
+        print("processing 2")
         if documents:
             vector_store.add_documents(documents)
             return {

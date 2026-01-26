@@ -3,6 +3,7 @@ import logging
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_core.output_parsers import JsonOutputParser
+from langchain_openai import ChatOpenAI as OpenAI
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -10,7 +11,7 @@ logger = logging.getLogger(__name__)
 class QuestionUnderstandingAgent:
     """Analyzes and understands the user's question"""
     
-    def __init__(self, config, openai_client):
+    def __init__(self, config, openai_client: OpenAI):
         self.config = config
         self.client = openai_client
         self.parser = JsonOutputParser()
@@ -37,7 +38,7 @@ class QuestionUnderstandingAgent:
                 HumanMessage(content=f"Question: {question}")
             ])
             
-            analysis = json.loads(response.content)
+            analysis = response
             logger.info(f"Question analysis completed: {analysis}")
             return analysis
             
@@ -69,20 +70,21 @@ class QuestionUnderstandingAgent:
 
             chain = self.client | self.parser
 
-            response = chain.invoke([
+            queries = chain.invoke([
                 SystemMessage(content=system_prompt),
                 HumanMessage(content=context)
             ])
-            
-            result = json.loads(response.content)
-            queries = result.get("queries", [question])
-            
-            # Ensure we have at least the original question
+
+            # queries is already a list
+            if not isinstance(queries, list):
+                raise ValueError("Expected list of queries")
+
+            # Ensure original question is included
             if question not in queries:
                 queries.insert(0, question)
-            
+
             logger.info(f"Generated {len(queries)} search queries")
-            return queries[:5]  # Limit to 5 queries
+            return queries[:5]
             
         except Exception as e:
             logger.error(f"Error generating search queries: {e}")

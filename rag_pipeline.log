@@ -142,3 +142,598 @@
 2026-01-07 00:41:55,748 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
 2026-01-07 00:41:55,751 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
 2026-01-07 00:41:55,752 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-07 01:44:49,344 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 01:44:49,349 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 01:44:49,357 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 01:44:49,359 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 01:44:50,247 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 01:44:50,251 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-07 01:44:50,252 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-07 02:17:07,254 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 02:17:07,255 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 02:17:10,205 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 02:17:10,330 - docket.worker - INFO - Starting worker 'F09-RTGA-242#21224' with the following tasks:
+2026-01-07 02:17:10,331 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 02:17:10,332 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 02:17:10,332 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 02:17:21,072 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:17:21,078 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 02:17:21,083 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:17:21,084 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 02:17:21,983 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 02:17:21,986 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-07 02:17:21,986 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-07 02:18:04,993 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 02:18:04,993 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 02:18:08,612 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 02:18:08,734 - docket.worker - INFO - Starting worker 'F09-RTGA-242#10300' with the following tasks:
+2026-01-07 02:18:08,734 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 02:18:08,735 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 02:18:08,735 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 02:18:17,895 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:18:17,902 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 02:18:17,909 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:18:17,910 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 02:18:18,792 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 02:18:18,796 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-07 02:18:18,796 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-07 02:25:54,005 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 02:25:54,006 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 02:25:57,267 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 02:25:57,376 - docket.worker - INFO - Starting worker 'F09-RTGA-242#23804' with the following tasks:
+2026-01-07 02:25:57,377 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 02:25:57,378 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 02:25:57,378 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 02:26:17,876 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:26:17,885 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 02:26:17,891 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:26:17,892 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 02:26:18,875 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 02:26:18,879 - src.data_processor.ingestion - INFO - Created 52 chunks from 15 documents in data\attention.pdf
+2026-01-07 02:26:18,880 - src.data_processor.ingestion - INFO - Ingested 52 total chunks from data
+2026-01-07 02:33:01,819 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 02:33:01,820 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 02:33:04,796 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 02:33:04,926 - docket.worker - INFO - Starting worker 'F09-RTGA-242#32840' with the following tasks:
+2026-01-07 02:33:04,927 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 02:33:04,928 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 02:33:04,928 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 02:33:25,360 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:33:25,365 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 02:33:25,371 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 02:33:25,372 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 02:33:26,203 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 02:33:26,206 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 02:33:26,207 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:01:35,278 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:01:35,279 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:01:38,198 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:01:38,329 - docket.worker - INFO - Starting worker 'F09-RTGA-242#9944' with the following tasks:
+2026-01-07 04:01:38,330 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:01:38,330 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:01:38,331 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:04:27,166 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:04:27,167 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:04:30,052 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:04:30,173 - docket.worker - INFO - Starting worker 'F09-RTGA-242#10512' with the following tasks:
+2026-01-07 04:04:30,174 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:04:30,174 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:04:30,175 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:04:39,881 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:04:39,887 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:04:39,894 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:04:39,895 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:04:40,996 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:04:41,003 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:04:41,004 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:06:21,702 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:06:21,707 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:06:21,712 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:06:21,713 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:06:22,715 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:06:22,719 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:06:22,719 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:12:22,550 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:12:22,550 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:12:25,583 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:12:25,711 - docket.worker - INFO - Starting worker 'F09-RTGA-242#33172' with the following tasks:
+2026-01-07 04:12:25,713 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:12:25,713 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:12:25,714 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:13:18,694 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:13:18,700 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:13:18,705 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:13:18,707 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:13:19,629 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:13:19,631 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:13:19,632 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:16:16,610 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:16:16,610 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:16:19,707 - src.vector_store.vector_store - WARNING - Could not load existing collection: object of type 'Collection' has no len(). Creating new one.
+2026-01-07 04:17:45,688 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:17:45,689 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:17:48,760 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:17:48,888 - docket.worker - INFO - Starting worker 'F09-RTGA-242#35416' with the following tasks:
+2026-01-07 04:17:48,889 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:17:48,889 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:17:48,890 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:18:06,433 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:18:06,439 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:18:06,443 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:18:06,444 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:18:07,354 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:18:07,359 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:18:07,359 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:23:46,303 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:23:46,303 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:23:49,537 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:23:49,654 - docket.worker - INFO - Starting worker 'F09-RTGA-242#32628' with the following tasks:
+2026-01-07 04:23:49,655 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:23:49,656 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:23:49,657 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:24:08,811 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:24:08,818 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:24:08,827 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:24:08,828 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:24:10,128 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:24:10,131 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:24:10,132 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:55:37,987 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:55:37,987 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:55:41,133 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:55:41,347 - docket.worker - INFO - Starting worker 'F09-RTGA-242#4412' with the following tasks:
+2026-01-07 04:55:41,348 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:55:41,349 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:55:41,349 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:55:55,293 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:55:55,302 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:55:55,312 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:55:55,313 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:55:56,742 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:55:56,746 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:55:56,747 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 04:59:07,416 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 04:59:07,417 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 04:59:10,710 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 04:59:10,983 - docket.worker - INFO - Starting worker 'F09-RTGA-242#20072' with the following tasks:
+2026-01-07 04:59:10,984 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 04:59:10,984 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 04:59:10,986 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 04:59:30,289 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:59:30,303 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 04:59:30,314 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 04:59:30,316 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 04:59:31,818 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 04:59:31,822 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 04:59:31,823 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 05:01:33,664 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:01:33,665 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:01:37,494 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 05:01:37,758 - docket.worker - INFO - Starting worker 'F09-RTGA-242#13796' with the following tasks:
+2026-01-07 05:01:37,759 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:01:37,760 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:01:37,761 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:01:45,790 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:01:45,802 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:01:45,816 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:01:45,829 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 05:01:47,170 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 05:01:47,178 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 05:01:47,192 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 05:02:19,082 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:02:19,083 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:02:23,879 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 05:02:24,122 - docket.worker - INFO - Starting worker 'F09-RTGA-242#19064' with the following tasks:
+2026-01-07 05:02:24,124 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:02:24,125 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:02:24,126 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:02:41,457 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:02:41,470 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:02:41,484 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:02:41,487 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 05:02:42,908 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 05:02:42,916 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 05:02:42,916 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 05:03:35,770 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:03:35,770 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:03:38,730 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 05:03:38,899 - docket.worker - INFO - Starting worker 'F09-RTGA-242#15020' with the following tasks:
+2026-01-07 05:03:38,901 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:03:38,901 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:03:38,902 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:03:56,085 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:03:56,098 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:03:56,111 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:03:56,114 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 05:03:57,739 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 05:03:57,742 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 05:03:57,743 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 05:05:19,426 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:05:19,426 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:05:22,753 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 05:05:23,033 - docket.worker - INFO - Starting worker 'F09-RTGA-242#18576' with the following tasks:
+2026-01-07 05:05:23,036 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:05:23,037 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:05:23,038 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:05:37,914 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:05:37,927 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:05:37,940 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:05:37,944 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 05:05:39,559 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 05:05:39,563 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 05:05:39,564 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 05:08:14,425 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:08:14,426 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:08:17,762 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 0 documents
+2026-01-07 05:08:17,977 - docket.worker - INFO - Starting worker 'F09-RTGA-242#11132' with the following tasks:
+2026-01-07 05:08:17,978 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:08:17,979 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:08:17,980 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:08:45,214 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:08:45,228 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:08:45,242 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:08:45,245 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-07 05:08:48,616 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-07 05:08:48,625 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-07 05:08:48,628 - src.data_processor.ingestion - INFO - Ingested 52 total documents from data
+2026-01-07 05:08:52,691 - src.vector_store.vector_store - INFO - Added 52 document chunks to vector store
+2026-01-07 05:22:19,498 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:22:19,499 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:22:22,842 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:22:23,071 - docket.worker - INFO - Starting worker 'F09-RTGA-242#36144' with the following tasks:
+2026-01-07 05:22:23,072 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:22:23,072 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:22:23,073 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:22:45,066 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:22:45,066 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:22:48,608 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:22:48,869 - docket.worker - INFO - Starting worker 'F09-RTGA-242#17720' with the following tasks:
+2026-01-07 05:22:48,870 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:22:48,871 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:22:48,871 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:23:14,436 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:23:14,451 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:23:14,463 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:23:14,464 - src.mcp.server.mcp_server - INFO - Processing question: What is attention?
+2026-01-07 05:23:20,074 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:23:20,106 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:23:25,613 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:23:25,618 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:23:25,797 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:23:27,445 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:23:27,447 - src.agents.retrieval_agent - ERROR - Error in document reranking: 'list' object has no attribute 'get'
+2026-01-07 05:23:44,341 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:23:44,345 - src.agents.tutoring_agent - INFO - Generated tutoring response (4343 chars)
+2026-01-07 05:28:50,817 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:28:50,818 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:28:54,138 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:28:54,376 - docket.worker - INFO - Starting worker 'F09-RTGA-242#21908' with the following tasks:
+2026-01-07 05:28:54,377 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:28:54,378 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:28:54,378 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:29:04,912 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:29:04,923 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:29:04,936 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:29:04,937 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 05:29:10,176 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:29:10,205 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:29:13,589 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:29:13,597 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:29:13,742 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:29:15,601 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:29:15,604 - src.agents.retrieval_agent - ERROR - Error in document reranking: 'list' object has no attribute 'get'
+2026-01-07 05:29:34,046 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:29:34,048 - src.agents.tutoring_agent - INFO - Generated tutoring response (4549 chars)
+2026-01-07 05:30:34,036 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:30:34,036 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:30:37,608 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:30:37,852 - docket.worker - INFO - Starting worker 'F09-RTGA-242#19552' with the following tasks:
+2026-01-07 05:30:37,853 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:30:37,854 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:30:37,855 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:35:51,972 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:35:51,973 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:35:55,538 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:35:55,783 - docket.worker - INFO - Starting worker 'F09-RTGA-242#824' with the following tasks:
+2026-01-07 05:35:55,784 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:35:55,785 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:35:55,786 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:36:07,660 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:36:07,673 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:36:07,687 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:36:07,688 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 05:36:13,188 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:36:13,232 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:36:17,953 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:36:17,957 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:36:18,189 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:36:19,330 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:36:19,333 - src.agents.retrieval_agent - ERROR - Error in document reranking: 'list' object has no attribute 'get'
+2026-01-07 05:36:44,725 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:36:44,728 - src.agents.tutoring_agent - INFO - Generated tutoring response (5078 chars)
+2026-01-07 05:50:24,039 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:50:24,039 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:50:27,407 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:50:27,626 - docket.worker - INFO - Starting worker 'F09-RTGA-242#26480' with the following tasks:
+2026-01-07 05:50:27,628 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:50:27,629 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:50:27,629 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:50:56,246 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:50:56,260 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:50:56,274 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:50:56,275 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 05:51:00,919 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:51:00,945 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:51:06,348 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:51:06,352 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:51:06,477 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:51:09,713 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:51:09,719 - src.agents.retrieval_agent - ERROR - Error in document reranking: 'list' object has no attribute 'get'
+2026-01-07 05:51:31,926 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:51:31,930 - src.agents.tutoring_agent - INFO - Generated tutoring response (4747 chars)
+2026-01-07 05:55:34,506 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:55:34,506 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:55:38,484 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:55:38,755 - docket.worker - INFO - Starting worker 'F09-RTGA-242#16152' with the following tasks:
+2026-01-07 05:55:38,756 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:55:38,757 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:55:38,757 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:55:49,729 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:55:49,743 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:55:49,758 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:55:49,759 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 05:55:58,269 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:55:58,311 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:56:02,465 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:56:02,470 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:56:02,615 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:56:04,006 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:56:04,009 - src.agents.retrieval_agent - ERROR - Error in document reranking: 'list' object has no attribute 'get'
+2026-01-07 05:56:22,842 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:56:22,844 - src.agents.tutoring_agent - INFO - Generated tutoring response (4767 chars)
+2026-01-07 05:56:47,616 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:56:47,616 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:56:51,204 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:56:51,470 - docket.worker - INFO - Starting worker 'F09-RTGA-242#24476' with the following tasks:
+2026-01-07 05:56:51,471 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:56:51,472 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:56:51,472 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:57:02,682 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:57:02,696 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:57:02,708 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:57:02,710 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 05:57:10,357 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:57:10,399 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:57:13,837 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:57:13,842 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:57:14,026 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:57:15,390 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:57:15,393 - src.agents.retrieval_agent - ERROR - Error in document reranking: 'list' object has no attribute 'get'
+2026-01-07 05:57:36,566 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:57:36,569 - src.agents.tutoring_agent - INFO - Generated tutoring response (4335 chars)
+2026-01-07 05:57:58,595 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 05:57:58,595 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 05:58:02,124 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 05:58:02,347 - docket.worker - INFO - Starting worker 'F09-RTGA-242#23832' with the following tasks:
+2026-01-07 05:58:02,349 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 05:58:02,349 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 05:58:02,350 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 05:58:13,831 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:58:13,847 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 05:58:13,860 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 05:58:13,860 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 05:58:18,450 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:58:18,491 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 05:58:21,596 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:58:21,600 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 05:58:21,744 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 05:58:23,264 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:58:23,269 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-07 05:58:41,999 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 05:58:42,002 - src.agents.tutoring_agent - INFO - Generated tutoring response (4762 chars)
+2026-01-07 06:03:53,205 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 06:03:53,206 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 06:03:56,576 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 06:03:56,748 - docket.worker - INFO - Starting worker 'F09-RTGA-242#1192' with the following tasks:
+2026-01-07 06:03:56,749 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 06:03:56,749 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 06:03:56,750 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 06:05:19,454 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 06:05:19,469 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 06:05:19,483 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 06:05:19,484 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 06:05:24,630 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:05:24,645 - src.agents.question_understanding_agent - ERROR - Error in question analysis: Expecting value: line 1 column 1 (char 0)
+2026-01-07 06:05:28,725 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:05:28,729 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'content'
+2026-01-07 06:05:29,089 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 06:05:30,363 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:05:30,366 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-07 06:05:46,219 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:05:46,221 - src.agents.tutoring_agent - INFO - Generated tutoring response (4351 chars)
+2026-01-07 06:11:22,472 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 06:11:22,474 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 06:11:26,156 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 06:11:26,380 - docket.worker - INFO - Starting worker 'F09-RTGA-242#36748' with the following tasks:
+2026-01-07 06:11:26,382 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 06:11:26,382 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 06:11:26,383 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 06:11:38,949 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 06:11:38,960 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 06:11:38,971 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 06:11:38,972 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 06:11:44,141 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:11:44,186 - src.agents.question_understanding_agent - ERROR - Error in question analysis: 'dict' object has no attribute 'content'
+2026-01-07 06:11:48,080 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:11:48,084 - src.agents.question_understanding_agent - ERROR - Error generating search queries: 'list' object has no attribute 'get'
+2026-01-07 06:11:48,231 - src.agents.retrieval_agent - INFO - Retrieved 5 unique documents
+2026-01-07 06:11:49,241 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:11:49,245 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-07 06:12:06,646 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:12:06,651 - src.agents.tutoring_agent - INFO - Generated tutoring response (4552 chars)
+2026-01-07 06:15:31,470 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 06:15:31,470 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 06:15:35,039 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 06:15:35,262 - docket.worker - INFO - Starting worker 'F09-RTGA-242#29628' with the following tasks:
+2026-01-07 06:15:35,263 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 06:15:35,264 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 06:15:35,265 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 06:15:46,949 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 06:15:46,964 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 06:15:46,980 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 06:15:46,981 - src.mcp.server.mcp_server - INFO - Processing question: What is the architecture defined in attention document?
+2026-01-07 06:15:51,744 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:15:51,785 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': "Architecture defined in the 'Attention' document (likely the Attention Is All You Need paper)", 'key_concepts_mentioned': ['architecture', 'attention document', 'attention'], 'question_type': 'Factual (identify/describe the architecture referenced)', 'complexity_level': 'Intermediate', 'implicit_assumptions_or_context_needed': ["Which specific 'attention document' is being referred to (e.g., the 'Attention Is All You Need' paper vs. another internal/design document)", "The term 'architecture' refers to a machine learning model architecture, not software/system architecture", 'The user wants the name and/or high-level structure of the model described in that document'], 'potential_related_concepts': ['Transformer architecture', 'self-attention', 'encoder-decoder structure', 'multi-head attention', 'positional encoding', 'feed-forward layers (FFN)', 'residual connections and layer normalization', 'scaled dot-product attention', 'sequence-to-sequence modeling', 'RNN/CNN alternatives in NLP']}
+2026-01-07 06:15:55,876 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:15:55,879 - src.agents.question_understanding_agent - INFO - Generated 13 search queries
+2026-01-07 06:15:56,068 - src.agents.retrieval_agent - INFO - Retrieved 10 unique documents
+2026-01-07 06:15:57,554 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:15:57,557 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-07 06:16:16,806 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 06:16:16,809 - src.agents.tutoring_agent - INFO - Generated tutoring response (4236 chars)
+2026-01-07 08:26:54,386 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-07 08:26:54,386 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-07 08:26:57,987 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-07 08:26:58,273 - docket.worker - INFO - Starting worker 'F09-RTGA-242#10736' with the following tasks:
+2026-01-07 08:26:58,276 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 08:26:58,276 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 08:26:58,277 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 08:27:10,637 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 08:27:10,653 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-07 08:27:10,664 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-07 08:27:10,665 - src.mcp.server.mcp_server - INFO - Processing question: Please explain model architecture
+2026-01-07 08:27:18,183 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 08:27:18,227 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Model architecture (likely in machine learning/deep learning)', 'key_concepts_mentioned': ['model', 'architecture', 'explanation/overview'], 'question_type': 'Conceptual (request for explanation/definition)', 'complexity_level': 'Basic (broad, unspecified scope)', 'implicit_assumptions_or_context_needed': ['The user likely refers to machine learning models (e.g., neural networks), but the domain is not explicitly stated', 'To answer precisely, it helps to know the model type (CNN, RNN, Transformer, etc.), task (classification, generation, regression), and constraints (latency, memory, interpretability)'], 'potential_related_concepts': ['layers and modules (input, hidden, output)', 'network topology (depth, width, connectivity)', 'parameters and weights', 'activation functions', 'loss functions and optimization (training vs architecture)', 'regularization (dropout, batch norm, weight decay)', 'attention mechanisms', 'encoder-decoder structures', 'hyperparameters', 'computational complexity (FLOPs), memory footprint', 'model capacity, bias-variance tradeoff', 'architectural design choices for specific tasks (CNNs for vision, Transformers for language)']}
+2026-01-07 08:27:23,814 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 08:27:23,818 - src.agents.question_understanding_agent - INFO - Generated 21 search queries
+2026-01-07 08:27:24,212 - src.agents.retrieval_agent - INFO - Retrieved 16 unique documents
+2026-01-07 08:27:26,066 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 08:27:26,070 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-07 08:27:54,531 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-07 08:27:54,534 - src.agents.tutoring_agent - INFO - Generated tutoring response (5297 chars)
+2026-01-20 13:11:04,941 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-20 13:11:04,941 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-20 13:11:07,453 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-20 13:11:07,794 - docket.worker - INFO - Starting worker 'F09-RTGA-242#22336' with the following tasks:
+2026-01-20 13:11:07,795 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-20 13:11:07,795 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-20 13:11:07,795 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-20 13:11:43,887 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-20 13:11:43,892 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-20 13:11:43,897 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-20 13:11:43,897 - src.mcp.server.mcp_server - INFO - Processing question: Please explain model architecture
+2026-01-20 13:11:53,519 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:11:53,527 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Model architecture (likely in the context of machine learning/deep learning)', 'key_concepts_mentioned': ['model', 'architecture', 'explanation/overview'], 'question_type': 'Conceptual (request for explanation/overview)', 'complexity_level': 'Basic (underspecified; could expand to intermediate depending on domain and depth expected)', 'implicit_assumptions_or_context_needed': ["Assumes 'model architecture' refers to ML/DL rather than software/system architecture or physical/statistical models", 'Assumes the user wants a general definition and common components rather than a specific model (e.g., CNN, Transformer)', 'Clarification needed on the model type, task (NLP, vision, tabular), and whether implementation details (layers, shapes, parameters) are desired'], 'potential_related_concepts': ['neural network layers (input/hidden/output)', 'parameters and weights', 'activation functions', 'loss functions and optimization', 'hyperparameters', 'feedforward vs recurrent vs convolutional vs transformer architectures', 'encoder-decoder structures', 'attention mechanisms', 'regularization (dropout, batch norm, weight decay)', 'model capacity and complexity', 'data flow and computational graph', 'training vs inference behavior', 'architecture diagrams and tensor shapes']}
+2026-01-20 13:11:59,532 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:11:59,534 - src.agents.question_understanding_agent - INFO - Generated 21 search queries
+2026-01-20 13:11:59,728 - src.agents.retrieval_agent - INFO - Retrieved 14 unique documents
+2026-01-20 13:12:02,333 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:12:02,335 - src.agents.retrieval_agent - ERROR - Error in document reranking: '<' not supported between instances of 'dict' and 'dict'
+2026-01-20 13:12:02,335 - src.mcp.server.mcp_server - ERROR - Error in ask_question: unsupported format string passed to dict.__format__
+2026-01-20 13:12:37,884 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-20 13:12:37,884 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-20 13:12:40,242 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-20 13:12:40,372 - docket.worker - INFO - Starting worker 'F09-RTGA-242#23292' with the following tasks:
+2026-01-20 13:12:40,373 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-20 13:12:40,373 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-20 13:12:40,374 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-20 13:13:22,003 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-20 13:13:22,017 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-20 13:13:22,028 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-20 13:13:22,029 - src.mcp.server.mcp_server - INFO - Processing question: Please explain model architecture
+2026-01-20 13:13:31,441 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:13:31,472 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Model architecture (likely in the context of machine learning/deep learning models)', 'key_concepts_mentioned': ['model', 'architecture', 'explanation/overview'], 'question_type': 'Conceptual (high-level explanatory request)', 'complexity_level': 'Basic', 'implicit_assumptions_or_context_needed': ['The user is referring to ML/DL model architecture rather than software/system architecture in general', 'The user may want a general definition and common components (layers, modules, data flow)', 'The specific model type (e.g., CNN, RNN, Transformer) is not specified and would affect the explanation depth and details', 'The intended use-case (vision, NLP, tabular, time series) is not provided'], 'potential_related_concepts': ['neural network layers (input, hidden, output)', 'activation functions', 'loss functions and optimization/training loop', 'hyperparameters (depth, width, learning rate, dropout)', 'regularization techniques (dropout, weight decay, batch normalization)', 'architectural patterns (CNN, RNN/LSTM/GRU, Transformer, MLP)', 'attention mechanisms', 'residual/skip connections', 'encoder-decoder structures', 'model capacity, inductive bias, and parameter count', 'computational complexity and memory/latency trade-offs']}
+2026-01-20 13:13:36,125 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:13:36,146 - src.agents.question_understanding_agent - INFO - Generated 16 search queries
+2026-01-20 13:13:36,334 - src.agents.retrieval_agent - INFO - Retrieved 13 unique documents
+2026-01-20 13:13:38,040 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:13:38,043 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-20 13:14:05,869 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-20 13:14:05,875 - src.agents.tutoring_agent - INFO - Generated tutoring response (5571 chars)
+2026-01-23 16:32:55,103 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-23 16:32:55,103 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-23 16:32:58,413 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 52 documents
+2026-01-23 16:32:58,874 - docket.worker - INFO - Starting worker 'F09-RTGA-242#12880' with the following tasks:
+2026-01-23 16:32:58,875 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-23 16:32:58,876 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-23 16:32:58,876 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-23 16:33:22,567 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 16:33:22,572 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-23 16:33:22,578 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 16:33:22,578 - src.mcp.server.mcp_server - INFO - Processing question: Please explain model architecture
+2026-01-23 16:33:30,441 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 16:33:30,454 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Model architecture (likely in machine learning/deep learning)', 'key_concepts_mentioned': ['model', 'architecture', 'explanation/overview'], 'question_type': 'Conceptual (definition and high-level explanation)', 'complexity_level': 'Basic', 'implicit_assumptions_or_context_needed': ["Assumes 'model' refers to an ML/AI model rather than a physical/engineering model", "The specific model type is unspecified (e.g., CNN, RNN, Transformer, classical ML), which affects what 'architecture' means in detail", 'Assumes the requester wants components and structure (layers/modules, connections, inputs/outputs) rather than training procedure or hyperparameter tuning'], 'potential_related_concepts': ['neural network layers (input, hidden, output)', 'network topology/connectivity (feedforward, residual connections, skip connections)', 'modules/blocks (convolutional blocks, attention blocks, MLPs)', 'activation functions', 'parameters and weights', 'hyperparameters (depth, width, embedding size, number of heads)', 'loss function and optimization (training vs architecture distinction)', 'regularization (dropout, batch/layer normalization)', 'model capacity and inductive bias', 'computational complexity and latency', 'architecture diagrams and model specification formats']}
+2026-01-23 16:33:34,810 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 16:33:34,811 - src.agents.question_understanding_agent - INFO - Generated 16 search queries
+2026-01-23 16:33:35,127 - src.agents.retrieval_agent - INFO - Retrieved 13 unique documents
+2026-01-23 16:33:37,138 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 16:33:37,140 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-23 16:34:00,198 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 16:34:00,203 - src.agents.tutoring_agent - INFO - Generated tutoring response (4701 chars)
+2026-01-23 23:38:40,088 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:38:40,092 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-23 23:38:40,097 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:38:40,098 - src.data_processor.ingestion - INFO - Ingesting file: data\attention.pdf
+2026-01-23 23:38:40,899 - src.data_processor.ingestion - INFO - Loaded 15 documents from data\attention.pdf
+2026-01-23 23:38:40,904 - src.data_processor.ingestion - INFO - Created 52 documents from 15 raw documents in data\attention.pdf
+2026-01-23 23:38:40,904 - src.data_processor.ingestion - INFO - Ingesting file: data\m0.pdf
+2026-01-23 23:38:40,953 - src.data_processor.ingestion - INFO - Loaded 4 documents from data\m0.pdf
+2026-01-23 23:38:40,955 - src.data_processor.ingestion - INFO - Created 10 documents from 4 raw documents in data\m0.pdf
+2026-01-23 23:38:40,955 - src.data_processor.ingestion - INFO - Ingesting file: data\m1.pdf
+2026-01-23 23:38:40,989 - src.data_processor.ingestion - INFO - Loaded 4 documents from data\m1.pdf
+2026-01-23 23:38:40,990 - src.data_processor.ingestion - INFO - Created 8 documents from 4 raw documents in data\m1.pdf
+2026-01-23 23:38:40,990 - src.data_processor.ingestion - INFO - Ingesting file: data\m2.pdf
+2026-01-23 23:38:41,466 - src.data_processor.ingestion - INFO - Loaded 2 documents from data\m2.pdf
+2026-01-23 23:38:41,466 - src.data_processor.ingestion - INFO - Created 6 documents from 2 raw documents in data\m2.pdf
+2026-01-23 23:38:41,467 - src.data_processor.ingestion - INFO - Ingested 76 total documents from data
+2026-01-23 23:38:44,223 - src.vector_store.vector_store - INFO - Added 76 document chunks to vector store
+2026-01-23 23:38:44,233 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:38:44,234 - src.mcp.server.mcp_server - INFO - Processing question: Please explain model architecture
+2026-01-23 23:38:52,993 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:38:53,003 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Model architecture (likely in machine learning/deep learning)', 'key_concepts_mentioned': ['model', 'architecture', 'explanation'], 'question_type': 'conceptual (definition/explanation request)', 'complexity_level': 'basic', 'implicit_assumptions_or_context_needed': ["The user is referring to 'model architecture' in a specific domain (most commonly machine learning/deep learning, but could also mean software/system architecture).", 'The type of model is unspecified (e.g., neural network vs. statistical model), so clarification may be needed to tailor the explanation.', 'The user may want either a high-level overview (components and design choices) or a detailed walkthrough (layers, connections, hyperparameters).'], 'potential_related_concepts': ['neural network layers (input/hidden/output)', 'model components (encoder/decoder, attention, residual connections)', 'hyperparameters (depth, width, activation functions, dropout)', 'training vs. inference', 'loss functions and optimization (gradient descent, Adam)', 'regularization and generalization', 'common architectures (CNNs, RNNs/LSTMs, Transformers, MLPs)', 'computational considerations (parameter count, FLOPs, memory)', 'software architecture analogy (modules, interfaces) if not ML-related']}
+2026-01-23 23:38:59,605 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:38:59,606 - src.agents.question_understanding_agent - INFO - Generated 21 search queries
+2026-01-23 23:38:59,660 - src.agents.retrieval_agent - INFO - Retrieved 13 unique documents
+2026-01-23 23:39:01,639 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:39:01,640 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-23 23:39:23,879 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:39:23,881 - src.agents.tutoring_agent - INFO - Generated tutoring response (5298 chars)
+2026-01-23 23:41:41,569 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:41:41,574 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-23 23:41:41,581 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:41:41,582 - src.mcp.server.mcp_server - INFO - Processing question: Please explain about simple shop system
+2026-01-23 23:41:49,780 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:41:49,790 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Simple shop system (basic e-commerce/store management system)', 'key_concepts_mentioned': ['shop system', 'simple (basic/minimal implementation)'], 'question_type': 'Conceptual / explanatory (request for an overview and description)', 'complexity_level': 'Basic', 'implicit_assumptions_or_context_needed': ['The user wants a high-level explanation rather than a specific implementation unless specified', "The term 'shop system' likely refers to a software system for selling products (online or POS)", 'Scope is minimal features (core functionality) rather than a full e-commerce platform', 'Platform/technology is unspecified (web/mobile/desktop; specific languages/frameworks unknown)', 'May involve both customer-facing and admin-facing components'], 'potential_related_concepts': ['Product catalog (products, categories, pricing)', 'Inventory/stock management', 'Shopping cart and checkout flow', 'Orders and order status tracking', 'Payments (cash/card/online gateways)', 'Customer accounts/authentication', 'Admin dashboard (CRUD for products/orders)', 'Database design (tables for users, products, orders, order_items)', 'Basic UI/UX for browsing and purchasing', 'Security basics (input validation, authorization)', 'Receipts/invoices and notifications (email/SMS)', 'Shipping/delivery options (if online)', 'Reporting/analytics (sales summary)']}
+2026-01-23 23:41:55,430 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:41:55,432 - src.agents.question_understanding_agent - INFO - Generated 16 search queries
+2026-01-23 23:41:55,511 - src.agents.retrieval_agent - INFO - Retrieved 9 unique documents
+2026-01-23 23:41:56,687 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:41:56,690 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-23 23:42:27,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:42:27,257 - src.agents.tutoring_agent - INFO - Generated tutoring response (5515 chars)
+2026-01-23 23:44:33,250 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:44:33,254 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-23 23:44:33,259 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-23 23:44:33,260 - src.mcp.server.mcp_server - INFO - Processing question: What is in milestone 1
+2026-01-23 23:44:39,859 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:44:39,866 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Milestone 1 contents/scope', 'key_concepts_mentioned': ['milestone 1', 'what is included (contents/deliverables)'], 'question_type': 'Factual (clarification request)', 'complexity_level': 'Basic', 'implicit_assumptions_or_context_needed': ['There is a defined project/assignment/plan that includes milestones', "The term 'milestone 1' refers to a specific document, schedule, syllabus, or project plan", 'The asker expects a predefined list of tasks/deliverables for milestone 1'], 'potential_related_concepts': ['project timeline/roadmap', 'deliverables', 'requirements/specification', 'acceptance criteria', 'due dates', 'milestone definition', 'work breakdown structure (WBS)', 'scope and objectives', 'dependencies between milestones']}
+2026-01-23 23:44:45,989 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:44:45,990 - src.agents.question_understanding_agent - INFO - Generated 23 search queries
+2026-01-23 23:44:46,049 - src.agents.retrieval_agent - INFO - Retrieved 7 unique documents
+2026-01-23 23:44:47,312 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:44:47,314 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-23 23:45:06,538 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 23:45:06,541 - src.agents.tutoring_agent - INFO - Generated tutoring response (3782 chars)
+2026-01-24 11:21:54,667 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-24 11:21:54,683 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-01-24 11:21:54,698 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-01-24 11:21:54,699 - src.mcp.server.mcp_server - INFO - Processing question: Can you help me solve this unit test? What is the expected output of the function when given input X?
+2026-01-24 11:22:02,953 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-24 11:22:02,967 - src.agents.question_understanding_agent - INFO - Question analysis completed: {'main_topic_subject': 'Determining the expected output of a function for a unit test given a specific input (X)', 'key_concepts_mentioned': ['unit test', 'solve/fix a unit test', 'expected output', 'function behavior', 'input X'], 'question_type': 'Analytical (test-case reasoning) / conceptual (understanding expected behavior)', 'complexity_level': 'Intermediate', 'implicit_assumptions_or_context_needed': ['The function definition/implementation is available or can be inferred from a specification', 'The value and type/structure of input X are known (e.g., number, string, object, edge-case input)', 'The unit test framework and assertion being used (e.g., Jest, pytest, JUnit) may affect details such as equality semantics or exception expectations', 'Any relevant constraints or requirements (e.g., handling of nulls, rounding rules, ordering, side effects) are specified', 'Whether the function is pure/deterministic or depends on external state/time/randomness is known'], 'potential_related_concepts': ['test-driven development (TDD)', 'arrange-act-assert pattern', 'edge cases and boundary conditions', 'input validation', 'determinism vs nondeterminism (time, randomness, I/O)', 'mocking/stubbing dependencies', 'exception/throw expectations', 'floating-point comparison tolerance', 'deep vs shallow equality', 'property-based testing', 'contract/specification vs implementation-defined behavior']}
+2026-01-24 11:22:09,512 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-24 11:22:09,515 - src.agents.question_understanding_agent - INFO - Generated 19 search queries
+2026-01-24 11:22:09,713 - src.agents.retrieval_agent - INFO - Retrieved 13 unique documents
+2026-01-24 11:22:11,419 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-24 11:22:11,422 - src.agents.retrieval_agent - INFO - Reranked 5 documents
+2026-01-24 11:22:27,632 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-24 11:22:27,636 - src.agents.tutoring_agent - INFO - Generated tutoring response (3023 chars)

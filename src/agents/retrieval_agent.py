@@ -62,14 +62,15 @@ class RetrievalAgent:
                 doc_list.append(f"Document {i+1}:\n{doc['content'][:500]}...")  # First 500 chars
             
             context = f"Question: {question}\n\nDocuments:\n" + "\n---\n".join(doc_list)
-            
+            print("scores_data0")
             response = self.client.invoke([
                 SystemMessage(content=system_prompt),
                 HumanMessage(content=context)
             ])
-            
+            print("scores_data1")
             scores_data = json.loads(response.content)
-            scores = scores_data.get("scores", [])
+            print(scores_data)
+            scores = scores_data
             
             # Update document scores
             for i, doc in enumerate(documents):
