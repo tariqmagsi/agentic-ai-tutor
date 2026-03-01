@@ -1,0 +1,253 @@
+Aggregates are groups of entities and value objects that help you decide what to expose from your domain layer to the outside.
+0:11
+Here's what you need to keep in mind.
+0:14
+According to domain-driven design, the server side is divided into layers.
+0:19
+We have the domain layer where the main domain logic resides.
+0:23
+We also have an application layer that represents this domain logic to the outside.
+0:31
+Let's assume we implement several REST services in this application layer.
+0:37
+We'll explore what exactly this means in a later video.
+0:41
+REST services are what, for example, a client, like a web client, would interact with.
+0:47
+And then we have, as I mentioned, the functionality found in the domain.
+0:53
+We've divided this functionality into several entities and value objects.
+0:58
+To connect these REST services with the domain logic, the service classes need to call the entities and value objects.
+1:07
+There are some issues we don't really like.
+1:12
+One issue is that we have quite a lot of these entities and value objects.
+1:17
+And not all of them are equally important.
+1:20
+Some stand out because they represent larger concepts.
+1:28
+I would like these to be treated in a specific way.
+1:33
+Secondly, there are certain entities and value objects that I don't want to expose at all.
+1:40
+Because they might be more internal, intended for internal use only.
+1:45
+Think, for example, of personal data in any e-commerce application.
+1:51
+With such personal data, you are legally required to be careful about how long you store it.
+1:58
+And especially what you expose through REST services.
+2:04
+So you want to control which entities you really expose to the outside.
+2:10
+And you probably don't like that these REST services point across the entire domain layer to some entities.
+2:20
+So it would be beneficial to have a certain structure in the domain layer.
+2:27
+This structure can indeed be found.
+2:29
+You always find certain clusters that are more related to each other.
+2:35
+These clusters, these associations of related entities, are called aggregates.
+2:42
+The idea is that REST services and other external accesses
+2:49
+no longer address each entity individually, but address these aggregates.
+2:56
+Within these local entity associations, further calls will follow.
+3:03
+If you define it this way, an aggregate is a group of entities and value objects with a close technical connection.
+3:10
+Aggregates can have invariants. We'll discuss what that means in a moment.
+3:15
+They have a root entity, shown here in this blue aggregate.
+3:21
+Only this root entity has a global identity.
+3:25
+This means it can be found from anywhere using a repository.
+3:29
+The nested entities and value objects only have a local identity.
+3:35
+So they can't be found from the outside.
+3:38
+This means that queries and references only exist on the root object.
+3:46
+And an aggregate is always deleted as a whole.
+3:50
+So if I delete the root entity, I also have to delete all nested entities.
+3:59
+Let's illustrate this with a practical example from the Evans book.
+4:04
+Here we see an application in a shop context.
+4:09
+We have a purchase order.
+4:11
+For this purchase order, there is an approved limit, i.e., a maximum budget,
+4:16
+that this order can have.
+4:19
+Then there is the Purchase Order Line Item.
+4:23
+This is a single component of such an order.
+4:28
+This Purchase Order Line Item is related to PART.
+4:32
+PART is something like a product.
+4:34
+It has a price.
+4:35
+So, the order consists of 3 pieces of product X and 5 pieces of product Y.
+4:43
+The invariant is shown here in parentheses on the relationship between Purchase Order and Purchase Order Line Item.
+4:51
+It states that the sum of the individual amounts for the line items must be less than the total limit for the order.
+5:02
+Let's go through a practical example.
+5:06
+We have an institute with an order limit of €5,000.
+5:11
+This is the remaining budget.
+5:13
+And we have two laboratories in the institute.
+5:16
+One laboratory is managed by Guido.
+5:19
+Guido has placed an order, met the requirements, and ordered two new notebooks and two new tablets.
+5:28
+Notebooks cost €1,200 and tablets €300.
+5:32
+So Guido now has an order total of €3,000.
+5:36
+The second laboratory is managed by Fabian.
+5:39
+Fabian has done the same and met the requirements.
+5:42
+A new laptop and two tablets are to be ordered here.
+5:47
+This puts Fabian at €1,800, bringing the total to €4,800, within the budget.
+5:56
+Now Professor Dr. Gernot Gierich comes into play, who is always in a bad mood when others have something he doesn't.
+6:05
+He sees the tablets and thinks, I want one too.
+6:10
+He goes to Fabian and says, please order me a tablet too.
+6:14
+Fabian looks at the sum from his laboratory, which is €1,800.
+6:20
+He knows the budget is €5,000 and thinks it fits.
+6:25
+So he orders an additional tablet.
+6:29
+With that, we have three tablets.
+6:31
+This increases the total for the blue laboratory to €2,100.
+6:35
+And suddenly, we have an overall budget surplus.
+6:38
+How did that happen?
+6:40
+This happened because Guido and Fabian each looked at their own order items.
+6:48
+And not at the invariant, which must apply to the total order.
+6:53
+How could we do that differently and better?
+6:55
+Well, if we added methods in the Purchase Order that would update and change it from Line Items, i.e., from Order Components Rules.
+7:06
+Then such changes could only take place via the Purchase Order, i.e., via the Root Entity.
+And we would have a place where we could check our invariant, i.e., the content of our budget limits.
+And with that, the case would look like this.
+Professor Gierich sees this on the tablet.
+
+He talks to Fabian.
+
+Fabian calls the Change Line Item method.
+
+But now it throws an exception because the test can determine that the budget surplus has been exceeded.
+
+How do I determine what belongs to an aggregate, i.e., where do the boundaries of this aggregate lie?
+
+If I assume that I use R to call my Root Entity and want to check for another Entity i, whether it is an inner Entity.
+
+Then I can formulate four rules that help me determine whether R and i are in the same aggregate.
+
+The first rule is that i, i.e., the inner Entity, always occurs together with R, i.e., the Root Entity.
+
+That means there is no query for i except together with a query for R, i.e., the Root.
+
+The second rule is that all accesses from the outside to i take place via R.
+
+So it doesn't even make sense to access i if R is not included in the context.
+
+The third condition is that if R is deleted, i is always deleted.
+
+And the fourth condition, as an optional condition, is that there may be invariants between R and i and possibly other classes.
+
+So conditions that are formulated between these Entities and that always apply.
+
+Let's look at these four rules in our example.
+
+We have our domain model of three Entities, and let's look at these two here.
+
+Do they belong to the same aggregate?
+
+So PurchaseOrder is, of course, our prospective Root Entity, and i would be PurchaseOrderLineItem, i.e., a possible inner Entity.
+The first condition is that i always occurs together with R.
+We can verify this.
+If I make a query for an order, then I would not look for a part of an order directly.
+But I would always look for this order and then I might be interested in the details of the order, such as a part of this order.
+You can say that all accesses to this inner Entity, i.e., PurchaseOrderLineItem, always take place via R.
+We can verify this, too.
+Because it makes no sense if I, for example, simply change any line item from the outside.
+I have to know what the corresponding order is; otherwise, I don't have the context at all.
+The third condition is that if I delete the order, i.e., PurchaseOrder, then the corresponding parts will also be deleted.
+Yes, of course.
+It doesn't make any sense that I delete them when the order is gone.
+And, as we have already seen, there are invariants.
+Namely, the already mentioned one, that the sum of the parts must remain smaller than the total budget.
+That means these two are certainly an aggregate.
+And now let's see if this can be expanded to our entire domain model.
+So part is also part of our aggregate.
+
+Is it the case that i always appears together with R?
+Are there no queries on i independent of R?
+And I have to say no, that's not the case.
+Because part is something like a product.
+And I can imagine that I have a product catalog in which all products of my webshop are listed.
+And that I would like to change an attribute such as the price of this part, this product.
+Is it the case that all accesses to i only happen via R?
+No, that's not the case either.
+Because I just mentioned the use case.
+I am, for example, a product manager.
+And I go through my entire catalog to check the prices and adjust them if necessary.
+Then I would access part directly without accessing specific orders.
+They don't interest me at all at this point.
+
+The third condition is that if an order is deleted, the corresponding referenced parts are also deleted.
+
+Of course not.
+Because they remain in the product catalog.
+
+Even if I now delete the specific order.
+
+And I don't even need to check the invariants first.
+
+So here we see that it is clearly not fulfilled.
+
+That means part is not part of my aggregate.
+
+So the aggregate remains within the previously sketched limits.
+
+With this, we have covered the essential properties of an aggregate.
+
+It is a branch of Entities and Value Objects with a designated root entity.
+
+And it must be ensured that these entities belong together in the branch.
+
+And that all accesses can only be made via the root entity.
+
+And then we have ensured that it is an aggregate.
+
+Thank you for watching.

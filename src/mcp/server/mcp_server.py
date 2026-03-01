@@ -1,37 +1,31 @@
 from fastmcp import FastMCP
-import asyncio
-from typing import List, Dict, Any, Optional
+from typing import Dict, Any
 import logging
-import json
 import os
-from contextlib import asynccontextmanager
 
 from src.config.config import config
-from src.common.openai_client import openai_client
+from src.utils.openai_client import openai_client
 from src.vector_store.vector_store import VectorStoreManager
-from src.data_processor.ingestion import DocumentIngestor as DataIngestor
-from src.agents.question_understanding_agent import QuestionUnderstandingAgent
-from src.agents.retrieval_agent import RetrievalAgent
-from src.agents.tutoring_agent import TutoringAgent
+from src.data_processor.data_ingestor import DocumentIngestor as DataIngestor
+from src.graph.graph import TutorGraphBuilder
+from src.graph.visualize_graph import visualize_langgraph_app
+from youtube_transcript_api import YouTubeTranscriptApi
+from src.data_processor.chunk_lecture_videos import hybrid_chunk_pipeline_documents as hybrid_chunk_pipeline
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize components
-vector_store = VectorStoreManager(config)
+vector_store = VectorStoreManager()
 data_ingestor = DataIngestor()
-question_agent = QuestionUnderstandingAgent(config, openai_client)
-retrieval_agent = RetrievalAgent(vector_store, config, openai_client)
-tutoring_agent = TutoringAgent(config, openai_client)
+agent = TutorGraphBuilder(config, vector_store, openai_client)
 
-mcp = FastMCP("RAG Tutor")
+mcp = FastMCP("Agentic AI Tutor")
+ytt_api = YouTubeTranscriptApi()
 
-@asynccontextmanager
-async def lifespan():
-    """Manage server lifecycle"""
-    logger.info("Starting RAG Tutor server...")
-    yield
-    logger.info("Shutting down RAG Tutor server...")
+graph = TutorGraphBuilder()
+
+visualize_langgraph_app(graph.app, out_png="agentic_tutor_graph.png")
 
 # Tool: Ingest documents
 @mcp.tool()
@@ -48,9 +42,9 @@ async def ingest_documents(directory_path: str) -> Dict[str, Any]:
     try:
         if not os.path.exists(directory_path):
             return {"success": False, "error": f"Directory not found: {directory_path}"}
-        print("processing 1")
+       
         documents = data_ingestor.ingest_directory(directory_path)
-        print("processing 2")
+        print(documents)
         if documents:
             vector_store.add_documents(documents)
             return {
@@ -64,130 +58,67 @@ async def ingest_documents(directory_path: str) -> Dict[str, Any]:
     except Exception as e:
         return {"success": False, "error": str(e)}
 
-# Tool: Ingest text directly
-@mcp.tool()
-async def ingest_text(text: str, source: str = "user_input") -> Dict[str, Any]:
-    """
-    Ingest plain text directly
-    
-    Args:
-        text: The text content to ingest
-        source: Source identifier for the text
-    
-    Returns:
-        Dictionary with ingestion results
-    """
-    try:
-        documents = data_ingestor.ingest_text(text, source)
-        vector_store.add_documents(documents)
-        
-        return {
-            "success": True,
-            "documents_ingested": len(documents),
-            "message": f"Successfully ingested text from {source}"
-        }
-        
-    except Exception as e:
-        return {"success": False, "error": str(e)}
-
-# Tool: Ask question (main tutoring interface)
+# Tool: Ask question (agentic tutor)
 @mcp.tool()
 async def ask_question(question: str) -> Dict[str, Any]:
-    """
-    Ask a question to the RAG Tutor
-    
-    Args:
-        question: The question to ask
-    
-    Returns:
-        Comprehensive answer with metadata and supporting documents
-    """
     try:
-        logger.info(f"Processing question: {question}")
-        
-        # Step 1: Analyze the question
-        analysis = question_agent.analyze_question(question)
-        
-        # Step 2: Generate search queries
-        queries = question_agent.generate_search_queries(question, analysis)
-        
-        # Step 3: Retrieve relevant documents
-        documents = retrieval_agent.retrieve_relevant_docs(
-            queries, 
-            n_results=config.MAX_RETRIEVAL_DOCS
-        )
-        
-        # Step 4: Rerank documents for relevance
-        documents = retrieval_agent.rerank_documents(question, documents)
-        
-        # Step 5: Generate tutoring response
-        response = tutoring_agent.generate_response(question, analysis, documents)
-        
-        # Add question analysis to response
-        response["question_analysis"] = analysis
-        
-        return response
-        
-    except Exception as e:
-        logger.error(f"Error in ask_question: {e}")
+        state = agent.run(question)
+        print("Final state from agentic graph:", state)
+        # If graph decided to clarify:
+        if state.get("clarifying_question"):
+            return {
+                "answer": state["clarifying_question"],
+                "metadata": {"mode": "clarify", "analysis": state.get("analysis", {})},
+                "supporting_documents": [],
+            }
+
         return {
-            "answer": f"I apologize, but I encountered an error while processing your question.\nError: {str(e)}",
-            "metadata": {"error": str(e)},
-            "supporting_documents": []
+            "answer": state.get("answer", ""),
+            "metadata": {
+                "analysis": state.get("analysis", {}),
+                "queries": state.get("queries", []),
+                "grounding": {
+                    "grounded": state.get("grounded", False),
+                    "score": state.get("grounding_score", 0.0),
+                    "judge": state.get("judge", {}),
+                },
+                "attempt": state.get("attempt", 0),
+                "stop_reason": state.get("stop_reason", ""),
+            },
+            "supporting_documents": state.get("documents", []),
         }
 
-# Tool: Get vector store statistics
-@mcp.tool()
-async def get_store_stats() -> Dict[str, Any]:
-    """
-    Get statistics about the vector store
-    
-    Returns:
-        Dictionary with vector store statistics
-    """
-    try:
-        stats = vector_store.get_collection_stats()
-        return {"success": True, "stats": stats}
     except Exception as e:
-        return {"success": False, "error": str(e)}
+        return {
+            "answer": f"Error: {str(e)}",
+            "metadata": {"error": str(e)},
+            "supporting_documents": [],
+        }
 
-# Tool: Clear vector store
 @mcp.tool()
-async def clear_store() -> Dict[str, Any]:
-    """
-    Clear all documents from the vector store
-    
-    Returns:
-        Dictionary with operation result
-    """
+async def clear_vector_store() -> Dict[str, Any]:
+    """Clear all documents from the vector store"""
     try:
-        vector_store.clear_collection()
+        vector_store.clear()
         return {"success": True, "message": "Vector store cleared successfully"}
     except Exception as e:
         return {"success": False, "error": str(e)}
-
-# Tool: Get system status
-@mcp.tool()
-async def get_system_status() -> Dict[str, Any]:
-    """
-    Get current system status and configuration
     
-    Returns:
-        Dictionary with system status
-    """
-    return {
-        "status": "operational",
-        "components": {
-            "vector_store": "connected",
-            "question_agent": "ready",
-            "retrieval_agent": "ready",
-            "tutoring_agent": "ready"
-        },
-        "config": {
-            "embedding_model": config.EMBEDDING_MODEL,
-            "llm_model": config.OPENAI_MODEL,
-            "max_retrieval_docs": config.MAX_RETRIEVAL_DOCS
-        }
-    }
+@mcp.tool()
+async def ingest_youtube_video(video_id: str) -> Dict[str, Any]:
+    """Ingest YouTube video transcript into vector store"""
+    try:
+        transcript_list = ytt_api.fetch(video_id)
+        # transcript_text = "\n".join([t["text"] for t in transcript_list])
+        raw_transcript = transcript_list.to_raw_data()
+        
+        docs = hybrid_chunk_pipeline(raw_transcript, video_id)
+        print(docs)
+        vector_store.add_documents(docs)
+
+        
+        return {"success": True, "message": f"Transcript from {video_id} ingested successfully"}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
 
 mcp_server=mcp.run(transport=config.Server.TRANSPORT)
