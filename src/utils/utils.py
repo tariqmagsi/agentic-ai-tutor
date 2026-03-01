@@ -1,50 +1,74 @@
-import hashlib
-import logging
-from datetime import datetime
-from pathlib import Path
-from typing import Any, Dict, List
-import tiktoken
+from typing import Any, Dict
+import json
+from typing import Any, Dict, Optional
+from src.prompts.chunking import METADATA_CHUNK_SYSTEM
+from src.vector_store.vector_store import VectorStoreManager
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('rag_pipeline.log'),
-        logging.StreamHandler()
-    ]
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain_openai import OpenAIEmbeddings
+from langchain_core.documents import Document
+from src.utils.openai_client import openai_client
+
+import dotenv
+import os
+
+dotenv.load_dotenv()
+
+
+def safe_json_loads(text: str) -> Optional[Dict[str, Any]]:
+    try:
+        return json.loads(text)
+    except Exception:
+        return None
+    
+vector_store = VectorStoreManager().vector_store
+
+embeddings = OpenAIEmbeddings(
+    model="text-embedding-3-small",
+    api_key=os.getenv("OPENAI_API_KEY"),
 )
 
-def get_logger(name: str) -> logging.Logger:
-    """Get logger with given name"""
-    return logging.getLogger(name)
+llm = openai_client
 
-logger = get_logger(__name__)
+_metadata_chain = ChatPromptTemplate.from_messages([
+    ("system", METADATA_CHUNK_SYSTEM),
+    ("human", "{text}"),
+]) | llm
 
-def generate_document_id(file_path: str, content: str) -> str:
-    """Generate unique document ID"""
-    file_hash = hashlib.md5(f"{file_path}{content[:1000]}".encode()).hexdigest()
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    return f"doc_{timestamp}_{file_hash[:8]}"
+_METADATA_FALLBACK: dict[str, Any] = {
+    "content_type": "concept",
+    "domain": "",
+    "has_code": False,
+}
 
-def calculate_token_count(text: str, encoding_name: str = "cl100k_base") -> int:
-    """Calculate token count for text"""
+
+def extract_metadata(text: str) -> dict[str, Any]:
+    """Return LLM-generated metadata for a text chunk."""
     try:
-        encoding = tiktoken.get_encoding(encoding_name)
-        return len(encoding.encode(text))
-    except:
-        # Fallback estimation
-        return len(text.split())
+        return json.loads(_metadata_chain.invoke({"text": text}).content)
+    except Exception:
+        return _METADATA_FALLBACK.copy()
 
-def clean_text(text: str) -> str:
-    """Clean and normalize text"""
-    import re
-    # Remove excessive whitespace
-    text = ' '.join(text.split())
-    # Remove special characters (keep alphanumeric, punctuation, and whitespace)
-    text = re.sub(r'[^\w\s.,!?;:()-]', ' ', text)
-    return text.strip()
+def nav_fields(index: int, total: int) -> dict[str, Any]:
+    """Return chunk navigation fields for a given index / total."""
+    return {
+        "chunk_index":      index,
+        "total_chunks":     total,
+        "position_pct":     round(index / max(total - 1, 1) * 100, 1),
+        "prev_chunk_index": index - 1 if index > 0 else None,
+        "next_chunk_index": index + 1 if index < total - 1 else None,
+    }
 
-def format_metadata(metadata: Dict[str, Any]) -> str:
-    """Format metadata for display"""
-    return "\n".join([f"{k}: {v}" for k, v in metadata.items()])
+def make_semantic_chunker(threshold: float = 0.80) -> SemanticChunker:
+    """Return a SemanticChunker with the shared embedding model."""
+    return SemanticChunker(
+        embeddings=embeddings,
+        breakpoint_threshold_type="percentile",
+        breakpoint_threshold_amount=threshold,
+    )
+
+def store(docs: list[Document]) -> None:
+    """Persist documents to the shared vector store."""
+    if docs:
+        vector_store.add_documents(docs)
