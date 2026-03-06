@@ -1,6 +1,5 @@
 # Python-generated files
 __pycache__/
-chroma_db/
 *.py[oc]
 build/
 dist/
