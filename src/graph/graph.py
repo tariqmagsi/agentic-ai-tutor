@@ -6,6 +6,7 @@ from src.agents.router import RouterAgent
 from src.agents.clarification import ClarificationAgent
 from src.agents.retrieval import RetrievalAgent, RetrievalNode
 from src.agents.tutor import TutorAgent
+from src.agents.evaluation import EvaluationAgent
 
 
 def _route_after_router(state: TutorState, config=None) -> str:
@@ -22,6 +23,7 @@ class TutorGraphBuilder:
         self.clarification_agent = ClarificationAgent()
         self.retrieval_node = RetrievalNode(retrieval_agent=RetrievalAgent(), rerank=True)
         self.tutor_agent = TutorAgent()
+        self.evaluation = EvaluationAgent()
 
     def build(self) -> StateGraph:
         graph = StateGraph(TutorState)
@@ -32,26 +34,26 @@ class TutorGraphBuilder:
         graph.add_node("clarification", self.clarification_agent)
         graph.add_node("retrieval", self.retrieval_node)
         graph.add_node("tutor", self.tutor_agent)
+        graph.add_node("evaluation", self.evaluation)
 
-        # Flow: understand → personalize → router → clarify → END
-        #                                          ↘ retrieve → tutor → END
         graph.set_entry_point("question_understanding")
-        graph.add_edge("question_understanding", "personalization")
-        graph.add_edge("personalization", "router")
-
+        graph.add_edge("question_understanding", "router")
         graph.add_conditional_edges(
             "router",
             _route_after_router,
             {
                 "clarify": "clarification",
-                "tutor": "retrieval",
+                "tutor": "personalization",
             },
         )
-
+        graph.add_edge("personalization", "retrieval")
         graph.add_edge("retrieval", "tutor")
-        graph.add_edge("clarification", END)
-        graph.add_edge("tutor", END)
 
+
+        graph.add_edge("tutor", "evaluation")
+        graph.add_edge("clarification", "evaluation")
+        graph.add_edge("evaluation", END)
+        
         return graph.compile()
 
     @staticmethod

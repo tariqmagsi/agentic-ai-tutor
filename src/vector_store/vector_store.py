@@ -3,7 +3,7 @@ import json
 from chromadb.config import Settings
 from langchain_chroma import Chroma
 from langchain_community.docstore.document import Document
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 from src.config.config import config
 
@@ -15,7 +15,7 @@ class VectorStoreManager:
     def __init__(self):
         self.vector_store = Chroma(
             collection_name=config.COLLECTION_NAME,
-            embedding_function=SentenceTransformerEmbeddings(model_name=config.EMBEDDING_MODEL),
+            embedding_function=HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL),
             persist_directory=config.CHROMA_PERSIST_DIRECTORY,
             client_settings=_CHROMA_SETTINGS,
         )
