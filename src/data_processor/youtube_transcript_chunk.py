@@ -63,13 +63,16 @@ def run(video_id: str) -> list[Document]:
     base_meta = raw.metadata.copy()
 
     print("🔀  Semantic chunking...")
-    sem = _semantic_chunker.split_documents([raw])
+    docs = _semantic_chunker.split_documents([raw])
+    print(docs)
 
-    print("✂️   Fine splitting...")
-    fine = _fine_splitter.split_documents(sem)
+    print("✂️   Recursive Character Text splitting...")
+    # docs = _fine_splitter.split_documents(sem)
+    # print(docs)
 
-    print(f"🧠  Extracting metadata for {len(fine)} chunks...")
-    final = _enrich(fine, base_meta)
+    print(f"🧠  Extracting metadata for {len(docs)} chunks...")
+    final = _enrich(docs, base_meta)
+    print(final)
 
     store(final)
     print(f"\n✅  Stored {len(final)} chunks for '{base_meta.get('video_title')}'")

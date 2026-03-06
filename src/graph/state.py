@@ -9,12 +9,12 @@ class TutorState(TypedDict, total=False):
     original_question: str
 
     # QuestionUnderstandingAgent
-    intent: str           # concept | example | procedure | comparison | rule | summary
-    response_style: str   # redirect | step_by_step | debug_guide | conceptual | design_guidance | resource_list | clarify_req
+    intent: str          
+    response_style: str   
     question_analysis: str
     has_code: bool
     language: str
-    complexity: str       # simple | complex
+    complexity: str 
     domain: str
 
     # PersonalizationAgent
@@ -24,7 +24,7 @@ class TutorState(TypedDict, total=False):
     route: str
     needs_clarification: bool
     clarification_question: str
-
+    
     # RetrievalAgent
     retrieved_docs: List[Document]
 
@@ -33,3 +33,6 @@ class TutorState(TypedDict, total=False):
 
     # Output
     final_answer: str
+
+    # EvaluationAgent
+    evaluation: dict

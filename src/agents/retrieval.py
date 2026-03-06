@@ -10,16 +10,6 @@ from src.vector_store.vector_store import VectorStoreManager
 
 
 class RetrievalAgent:
-    """
-    Retrieves docs from vector store and reranks with LLM.
-
-    Key fix: uses plain similarity_search() instead of
-    similarity_search_with_relevance_scores(). The latter returns
-    negative cosine scores for MiniLM embeddings, which caused
-    score >= 0.2 filtering to eliminate everything. We fetch top-k
-    unconditionally and let the LLM reranker decide relevance.
-    """
-
     def __init__(self):
         self.vector_store = VectorStoreManager().vector_store
         self.client = openai_client
@@ -33,7 +23,7 @@ class RetrievalAgent:
 
         print(f"[RetrievalAgent] Retrieved {len(docs)} raw docs.")
         if docs:
-            print(f"[RetrievalAgent] Sample: {docs[0].page_content[:150]}")
+            print(docs)
 
         return [
             {

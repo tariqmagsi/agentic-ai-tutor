@@ -60,7 +60,7 @@ def nav_fields(index: int, total: int) -> dict[str, Any]:
         "next_chunk_index": index + 1 if index < total - 1 else None,
     }
 
-def make_semantic_chunker(threshold: float = 0.80) -> SemanticChunker:
+def make_semantic_chunker(threshold: float = 1.0) -> SemanticChunker:
     """Return a SemanticChunker with the shared embedding model."""
     return SemanticChunker(
         embeddings=embeddings,
