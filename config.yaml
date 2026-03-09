@@ -1,4 +1,6 @@
-name: Agentic AI Tutor
-license: apache-2.0
-widget: Gradio
-sdk: python
+title: Agentic Ai
+emoji: 🐨
+colorFrom: green
+colorTo: yellow
+sdk: docker
+pinned: false
