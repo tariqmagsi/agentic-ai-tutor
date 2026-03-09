@@ -35,7 +35,13 @@ def _build_graph():
     TutorGraphBuilder().print_graph(graph)
     return graph
 
-graph = _build_graph()
+graph = None
+
+def get_graph():
+    global graph
+    if graph is None:
+        graph = _build_graph()
+    return graph
 
 class ChatRequest(BaseModel):
     question: str
@@ -83,6 +89,7 @@ async def chat(request: ChatRequest):
     
     try:
         history = json.loads(request.conversation_history)
+        graph = get_graph()
         state = graph.invoke({
             "original_question": request.question,
             "conversation_history": history,
