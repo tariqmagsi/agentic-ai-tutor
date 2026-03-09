@@ -1,4 +1,11 @@
+# Ignore Chroma DB files
 chroma_db/
+*.bin
+*.sqlite3
+*.pickle
+
+# Ignore PDF data files
+data/*.pdf
 
 # Python-generated files
 __pycache__/
