@@ -1,0 +1,698 @@
+[
+  {
+    "Strategy": "Semantic(0.80)",
+    "#Chunks": 63,
+    "Faith": "0.825\u00b10.214",
+    "AnsRel": "0.895\u00b10.101",
+    "Prec@k": "0.633\u00b10.213",
+    "MRR": "0.889\u00b10.248",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.6666666666666666,
+        "ans_rel": 0.9999999999000003,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 0.8571428571428571,
+        "ans_rel": 0.9701783495017337,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.42857142857142855,
+        "ans_rel": 0.7189963894729675,
+        "prec": 0.6,
+        "mrr": 0.3333333333333333
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.9207958094738254,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.9578407215112114,
+        "prec": 0.8,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.8000911436079486,
+        "prec": 0.6,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Recursive(500)",
+    "#Chunks": 16,
+    "Faith": "0.882\u00b10.144",
+    "AnsRel": "0.895\u00b10.096",
+    "Prec@k": "0.467\u00b10.094",
+    "MRR": "1.000\u00b10.000",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.8333333333333334,
+        "ans_rel": 0.9999999999000001,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9242940274074184,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.6,
+        "ans_rel": 0.8239063708334041,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.9207914845524695,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 0.8571428571428571,
+        "ans_rel": 0.9807807788718966,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.7213174126846359,
+        "prec": 0.4,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Fixed(500)",
+    "#Chunks": 16,
+    "Faith": "0.976\u00b10.053",
+    "AnsRel": "0.902\u00b10.095",
+    "Prec@k": "0.467\u00b10.094",
+    "MRR": "1.000\u00b10.000",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 1.0,
+        "ans_rel": 0.9992454416492939,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9429283699003913,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 1.0,
+        "ans_rel": 0.8417640319996794,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.9160396038526599,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 0.8571428571428571,
+        "ans_rel": 0.9871871858812645,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.7231645590012888,
+        "prec": 0.4,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Sem+Similarity",
+    "#Chunks": 63,
+    "Faith": "0.802\u00b10.260",
+    "AnsRel": "0.894\u00b10.105",
+    "Prec@k": "0.633\u00b10.213",
+    "MRR": "0.889\u00b10.248",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.6666666666666666,
+        "ans_rel": 0.9999997206759863,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 0.8571428571428571,
+        "ans_rel": 0.970197416845633,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.2857142857142857,
+        "ans_rel": 0.6987737771511301,
+        "prec": 0.6,
+        "mrr": 0.3333333333333333
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.9207914845524695,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.9562080026440309,
+        "prec": 0.8,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.8172433806105501,
+        "prec": 0.6,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Sem+Sim+Rerank",
+    "#Chunks": 63,
+    "Faith": "0.897\u00b10.147",
+    "AnsRel": "0.753\u00b10.276",
+    "Prec@k": "0.850\u00b10.214",
+    "MRR": "0.917\u00b10.186",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.6666666666666666,
+        "ans_rel": 0.9999999999000003,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9297500949394027,
+        "prec": 0.5,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.7142857142857143,
+        "ans_rel": 0.16633841743430489,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.8927611119450388,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.7626999209955554,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.7658055173516467,
+        "prec": 0.6,
+        "mrr": 0.5
+      }
+    ]
+  },
+  {
+    "Strategy": "Sem+BM25",
+    "#Chunks": 63,
+    "Faith": "0.720\u00b10.360",
+    "AnsRel": "0.718\u00b10.293",
+    "Prec@k": "0.467\u00b10.149",
+    "MRR": "0.867\u00b10.298",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 1.0,
+        "ans_rel": 0.9999996820735687,
+        "prec": 0.2,
+        "mrr": 0.2
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 0.75,
+        "ans_rel": 0.9297651905887814,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.5714285714285714,
+        "ans_rel": 0.16633841743430489,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 0.0,
+        "ans_rel": 0.8927611119450388,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.5024842936507253,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.8172339567360997,
+        "prec": 0.6,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Semantic(0.80)+Similarity",
+    "#Chunks": 63,
+    "Faith": "0.825\u00b10.270",
+    "AnsRel": "0.900\u00b10.109",
+    "Prec@k": "0.633\u00b10.213",
+    "MRR": "0.889\u00b10.248",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.6666666666666666,
+        "ans_rel": 0.9999999998999999,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9693842967135963,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.2857142857142857,
+        "ans_rel": 0.6987737771511301,
+        "prec": 0.6,
+        "mrr": 0.3333333333333333
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.9207914845524695,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.9927864437531392,
+        "prec": 0.8,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.8166965056587757,
+        "prec": 0.6,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Semantic(0.80)+Sim+Rerank",
+    "#Chunks": 63,
+    "Faith": "0.873\u00b10.139",
+    "AnsRel": "0.764\u00b10.277",
+    "Prec@k": "0.850\u00b10.214",
+    "MRR": "0.917\u00b10.186",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.6666666666666666,
+        "ans_rel": 0.9999994611542666,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9133517010446925,
+        "prec": 0.5,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.7142857142857143,
+        "ans_rel": 0.16633841743430489,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 0.8571428571428571,
+        "ans_rel": 0.9160136458628743,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.7706665664598078,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.8169755824582458,
+        "prec": 0.6,
+        "mrr": 0.5
+      }
+    ]
+  },
+  {
+    "Strategy": "Semantic(0.80)+BM25",
+    "#Chunks": 63,
+    "Faith": "0.734\u00b10.362",
+    "AnsRel": "0.719\u00b10.293",
+    "Prec@k": "0.467\u00b10.149",
+    "MRR": "0.867\u00b10.298",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 1.0,
+        "ans_rel": 0.9999999999000003,
+        "prec": 0.2,
+        "mrr": 0.2
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 0.8333333333333334,
+        "ans_rel": 0.9307779687252916,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.5714285714285714,
+        "ans_rel": 0.16633841743430489,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 0.0,
+        "ans_rel": 0.8928545399711693,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.5056778233927481,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.8164019392296785,
+        "prec": 0.6,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Recursive(500)+Similarity",
+    "#Chunks": 16,
+    "Faith": "0.889\u00b10.184",
+    "AnsRel": "0.891\u00b10.090",
+    "Prec@k": "0.467\u00b10.094",
+    "MRR": "1.000\u00b10.000",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.8333333333333334,
+        "ans_rel": 0.9999999998999999,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.8760093532525389,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.5,
+        "ans_rel": 0.8341837307219132,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.9207914845524695,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.9808022502441149,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.7360065766103764,
+        "prec": 0.4,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Recursive(500)+Sim+Rerank",
+    "#Chunks": 16,
+    "Faith": "0.993\u00b10.085",
+    "AnsRel": "0.804\u00b10.244",
+    "Prec@k": "0.628\u00b10.178",
+    "MRR": "1.000\u00b10.000",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 0.8333333333333334,
+        "ans_rel": 0.9992456186524544,
+        "prec": 0.6,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9297717072504832,
+        "prec": 0.5,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 1.125,
+        "ans_rel": 0.29792885978206246,
+        "prec": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 1.0,
+        "ans_rel": 0.8928606996675427,
+        "prec": 0.5,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 1.0,
+        "ans_rel": 0.9807807788718966,
+        "prec": 0.5,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.7226908723799497,
+        "prec": 0.6666666666666666,
+        "mrr": 1.0
+      }
+    ]
+  },
+  {
+    "Strategy": "Recursive(500)+BM25",
+    "#Chunks": 16,
+    "Faith": "0.858\u00b10.203",
+    "AnsRel": "0.800\u00b10.259",
+    "Prec@k": "0.333\u00b10.149",
+    "MRR": "0.833\u00b10.373",
+    "per_question": [
+      {
+        "id": "Q1",
+        "type": "concept",
+        "faith": 1.0,
+        "ans_rel": 0.9999999999000003,
+        "prec": 0.0,
+        "mrr": 0.0
+      },
+      {
+        "id": "Q2",
+        "type": "procedure",
+        "faith": 1.0,
+        "ans_rel": 0.9312599017255545,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q3",
+        "type": "example",
+        "faith": 0.42857142857142855,
+        "ans_rel": 0.2506632542895502,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q4",
+        "type": "comparison",
+        "faith": 0.8888888888888888,
+        "ans_rel": 0.8928610773686186,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q5",
+        "type": "rule",
+        "faith": 0.8333333333333334,
+        "ans_rel": 0.9788817426735849,
+        "prec": 0.4,
+        "mrr": 1.0
+      },
+      {
+        "id": "Q6",
+        "type": "summary",
+        "faith": 1.0,
+        "ans_rel": 0.7485637293529255,
+        "prec": 0.4,
+        "mrr": 1.0
+      }
+    ]
+  }
+]

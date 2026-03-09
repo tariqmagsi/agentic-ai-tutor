@@ -15,6 +15,13 @@ class Config:
     CHROMA_PERSIST_DIRECTORY: str = "./chroma_db"
     EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
     COLLECTION_NAME: str = "rag_tutor_collection"
+    AGENTIC_COLLECTION_NAME: str = "agentic_tutor_collection"
+
+    CHROMA_CLOUD_HOST = os.getenv("CHROMA_CLOUD_HOST")
+    CHROMA_CLOUD_PORT = int(os.getenv("CHROMA_CLOUD_PORT", "8000"))
+    CHROMA_API_KEY = os.getenv("CHROMA_API_KEY")
+    CHROMA_TENANT = os.getenv("CHROMA_TENANT")
+    CHROMA_DB = os.getenv("CHROMA_DATABASE")
     
     # Agent Configuration
     MAX_RETRIEVAL_DOCS: int = 5

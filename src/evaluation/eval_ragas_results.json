@@ -1,0 +1,134 @@
+[
+  {
+    "Strategy": "Semantic(0.80)",
+    "#Chunks": 46,
+    "faithfulness": "0.767\u00b10.219",
+    "answer_relevancy": "0.927\u00b10.050",
+    "context_recall": "0.889\u00b10.248",
+    "factual_correctness(mode=f1)": "0.603\u00b10.241",
+    "semantic_similarity": "0.695\u00b10.174",
+    "bleu_score": "0.148\u00b10.164",
+    "rouge_score(mode=fmeasure)": "0.343\u00b10.145"
+  },
+  {
+    "Strategy": "Recursive(500)",
+    "#Chunks": 13,
+    "faithfulness": "0.842\u00b10.206",
+    "answer_relevancy": "0.937\u00b10.045",
+    "context_recall": "0.944\u00b10.124",
+    "factual_correctness(mode=f1)": "0.730\u00b10.167",
+    "semantic_similarity": "0.757\u00b10.090",
+    "bleu_score": "0.178\u00b10.131",
+    "rouge_score(mode=fmeasure)": "0.442\u00b10.147"
+  },
+  {
+    "Strategy": "Fixed(500)",
+    "#Chunks": 13,
+    "faithfulness": "0.794\u00b10.258",
+    "answer_relevancy": "0.933\u00b10.050",
+    "context_recall": "0.944\u00b10.124",
+    "factual_correctness(mode=f1)": "0.817\u00b10.099",
+    "semantic_similarity": "0.761\u00b10.086",
+    "bleu_score": "0.153\u00b10.135",
+    "rouge_score(mode=fmeasure)": "0.430\u00b10.139"
+  },
+  {
+    "Strategy": "Sem+Similarity",
+    "#Chunks": 46,
+    "faithfulness": "0.767\u00b10.219",
+    "answer_relevancy": "0.924\u00b10.043",
+    "context_recall": "0.889\u00b10.248",
+    "factual_correctness(mode=f1)": "0.618\u00b10.229",
+    "semantic_similarity": "0.692\u00b10.186",
+    "bleu_score": "0.159\u00b10.162",
+    "rouge_score(mode=fmeasure)": "0.344\u00b10.101"
+  },
+  {
+    "Strategy": "Sem+Sim+Rerank",
+    "#Chunks": 46,
+    "faithfulness": "0.759\u00b10.319",
+    "answer_relevancy": "0.835\u00b10.211",
+    "context_recall": "0.833\u00b10.255",
+    "factual_correctness(mode=f1)": "0.608\u00b10.300",
+    "semantic_similarity": "0.667\u00b10.226",
+    "bleu_score": "0.150\u00b10.167",
+    "rouge_score(mode=fmeasure)": "0.338\u00b10.125"
+  },
+  {
+    "Strategy": "Sem+BM25",
+    "#Chunks": 46,
+    "faithfulness": "0.464\u00b10.340",
+    "answer_relevancy": "0.827\u00b10.229",
+    "context_recall": "0.556\u00b10.369",
+    "factual_correctness(mode=f1)": "0.513\u00b10.294",
+    "semantic_similarity": "0.612\u00b10.209",
+    "bleu_score": "0.122\u00b10.131",
+    "rouge_score(mode=fmeasure)": "0.244\u00b10.113"
+  },
+  {
+    "Strategy": "Semantic(0.80)+Similarity",
+    "#Chunks": 46,
+    "faithfulness": "0.812\u00b10.268",
+    "answer_relevancy": "0.834\u00b10.253",
+    "context_recall": "0.889\u00b10.248",
+    "factual_correctness(mode=f1)": "0.652\u00b10.297",
+    "semantic_similarity": "0.675\u00b10.229",
+    "bleu_score": "0.119\u00b10.164",
+    "rouge_score(mode=fmeasure)": "0.320\u00b10.131"
+  },
+  {
+    "Strategy": "Semantic(0.80)+Sim+Rerank",
+    "#Chunks": 46,
+    "faithfulness": "0.721\u00b10.310",
+    "answer_relevancy": "0.818\u00b10.239",
+    "context_recall": "0.833\u00b10.255",
+    "factual_correctness(mode=f1)": "0.592\u00b10.324",
+    "semantic_similarity": "0.668\u00b10.226",
+    "bleu_score": "0.156\u00b10.201",
+    "rouge_score(mode=fmeasure)": "0.318\u00b10.115"
+  },
+  {
+    "Strategy": "Semantic(0.80)+BM25",
+    "#Chunks": 46,
+    "faithfulness": "0.409\u00b10.356",
+    "answer_relevancy": "0.827\u00b10.229",
+    "context_recall": "0.556\u00b10.369",
+    "factual_correctness(mode=f1)": "0.493\u00b10.298",
+    "semantic_similarity": "0.603\u00b10.211",
+    "bleu_score": "0.108\u00b10.137",
+    "rouge_score(mode=fmeasure)": "0.225\u00b10.093"
+  },
+  {
+    "Strategy": "Recursive(500)+Similarity",
+    "#Chunks": 13,
+    "faithfulness": "0.818\u00b10.255",
+    "answer_relevancy": "0.932\u00b10.041",
+    "context_recall": "0.889\u00b10.157",
+    "factual_correctness(mode=f1)": "0.728\u00b10.139",
+    "semantic_similarity": "0.761\u00b10.090",
+    "bleu_score": "0.161\u00b10.130",
+    "rouge_score(mode=fmeasure)": "0.440\u00b10.146"
+  },
+  {
+    "Strategy": "Recursive(500)+Sim+Rerank",
+    "#Chunks": 13,
+    "faithfulness": "0.749\u00b10.346",
+    "answer_relevancy": "0.836\u00b10.252",
+    "context_recall": "0.889\u00b10.157",
+    "factual_correctness(mode=f1)": "0.655\u00b10.287",
+    "semantic_similarity": "0.714\u00b10.156",
+    "bleu_score": "0.130\u00b10.142",
+    "rouge_score(mode=fmeasure)": "0.369\u00b10.184"
+  },
+  {
+    "Strategy": "Recursive(500)+BM25",
+    "#Chunks": 13,
+    "faithfulness": "0.861\u00b10.178",
+    "answer_relevancy": "0.922\u00b10.035",
+    "context_recall": "0.889\u00b10.157",
+    "factual_correctness(mode=f1)": "0.688\u00b10.219",
+    "semantic_similarity": "0.754\u00b10.102",
+    "bleu_score": "0.143\u00b10.104",
+    "rouge_score(mode=fmeasure)": "0.410\u00b10.162"
+  }
+]

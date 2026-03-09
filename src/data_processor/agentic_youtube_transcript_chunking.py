@@ -1,9 +1,11 @@
 import yt_dlp
 from langchain_core.documents import Document
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.messages import SystemMessage, HumanMessage
 from youtube_transcript_api import YouTubeTranscriptApi
 
-from src.utils.utils import extract_metadata, make_semantic_chunker, nav_fields, store
+from src.prompts.chunking import AGENTIC_CHUNK_SYSTEM
+from src.utils.utils import extract_metadata, nav_fields, store, llm
+from src.utils.utils import safe_json_loads
 
 # ── Load ──────────────────────────────────────────────────────────────────────
 
@@ -27,13 +29,25 @@ def _load(video_id: str) -> Document:
     )
 
 
-# ── Enrich metadata ───────────────────────────────────────────────────────────
+# ── Agentic chunking — LLM decides where to split ────────────────────────────
 
-_fine_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1200,
-    chunk_overlap=240,
-    separators=["\n\n", "\n", ". ", "! ", "? ", " ", ""],
-)
+def _agentic_chunk(text: str, max_chars: int = 12000) -> list[str]:
+    """Send text to LLM in windows, let it split into semantic chunks."""
+    all_chunks = []
+    # Process in windows to stay within context limits
+    for start in range(0, len(text), max_chars):
+        window = text[start:start + max_chars]
+        resp = llm.invoke([
+            SystemMessage(content=AGENTIC_CHUNK_SYSTEM),
+            HumanMessage(content=window),
+        ])
+        raw = resp.content.strip().replace("```json", "").replace("```", "").strip()
+        chunks = safe_json_loads(raw)
+        if isinstance(chunks, list):
+            all_chunks.extend([c for c in chunks if isinstance(c, str) and c.strip()])
+        else:
+            all_chunks.append(window)
+    return all_chunks
 
 
 def _enrich(docs: list[Document], base_meta: dict) -> list[Document]:
@@ -52,25 +66,19 @@ def _enrich(docs: list[Document], base_meta: dict) -> list[Document]:
 
 # ── Public entry point ────────────────────────────────────────────────────────
 
-_semantic_chunker = make_semantic_chunker(threshold=0.75)
-
 
 def run(video_id: str) -> list[Document]:
     print("📥  Loading transcript...")
     raw = _load(video_id)
     base_meta = raw.metadata.copy()
 
-    print("🔀  Semantic chunking...")
-    docs = _semantic_chunker.split_documents([raw])
-    print(docs)
-
-    print("✂️   Recursive Character Text splitting...")
-    # docs = _fine_splitter.split_documents(docs)
-    #print(docs)
+    print("🤖  Agentic chunking (LLM-driven)...")
+    chunks = _agentic_chunk(raw.page_content)
+    docs = [Document(page_content=c) for c in chunks]
+    print(f"    → {len(docs)} chunks created")
 
     print(f"🧠  Extracting metadata for {len(docs)} chunks...")
     final = _enrich(docs, base_meta)
-    print(final)
 
     store(final)
     print(f"\n✅  Stored {len(final)} chunks for '{base_meta.get('video_title')}'")

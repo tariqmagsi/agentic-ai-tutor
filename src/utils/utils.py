@@ -21,8 +21,8 @@ def safe_json_loads(text: str) -> Optional[Dict[str, Any]]:
         return json.loads(text)
     except Exception:
         return None
-    
-vector_store = VectorStoreManager().vector_store
+
+_active_store_type: str = "agentic"
 
 embeddings = OpenAIEmbeddings(
     model="text-embedding-3-small",
@@ -37,9 +37,7 @@ _metadata_chain = ChatPromptTemplate.from_messages([
 ]) | llm
 
 _METADATA_FALLBACK: dict[str, Any] = {
-    "content_type": "concept",
-    "domain": "",
-    "has_code": False,
+    "content_type": "concept"
 }
 
 
@@ -68,7 +66,41 @@ def make_semantic_chunker(threshold: float = 1.0) -> SemanticChunker:
         breakpoint_threshold_amount=threshold,
     )
 
+def set_active_store_type(type: str) -> None:
+    """Set which collection store() writes to. Call before running processors."""
+    global _active_store_type
+    _active_store_type = type
+    print(f"[utils] Active store type set to: {type}")
+
 def store(docs: list[Document]) -> None:
-    """Persist documents to the shared vector store."""
+    """Persist documents to the vector store using the active store type."""
     if docs:
-        vector_store.add_documents(docs)
+        print(f"[utils] Storing {len(docs)} docs to '{_active_store_type}' collection")
+        VectorStoreManager(type=_active_store_type).add_documents(docs)
+
+from urllib.parse import urlparse, parse_qs
+
+def get_video_id(url):
+    """Extract video ID from various YouTube URL formats."""
+    parsed = urlparse(url)
+    
+    if parsed.hostname in ('www.youtube.com', 'youtube.com'):
+        # e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        return parse_qs(parsed.query).get('v', [None])[0]
+    elif parsed.hostname == 'youtu.be':
+        # e.g. https://youtu.be/dQw4w9WgXcQ
+        return parsed.path.lstrip('/')
+    
+    return None
+
+def is_youtube_url(url):
+    """Check if a URL is a YouTube link."""
+    parsed = urlparse(url)
+    youtube_domains = (
+        'youtube.com',
+        'www.youtube.com',
+        'm.youtube.com',
+        'youtu.be',
+        'www.youtu.be',
+    )
+    return parsed.hostname in youtube_domains

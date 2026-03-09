@@ -6,10 +6,8 @@ Analyze the student's message and return a JSON object:
   "intent": string,
   "response_style": string,
   "question_analysis": string,
-  "has_code": boolean,
-  "language": string,
   "complexity": "simple" | "complex",
-  "domain": string
+  "rewrite_question": string 
 }
 
 ── intent (WHAT the student is asking about) ──────────────────────────────────
@@ -45,10 +43,8 @@ intent and response_style are INDEPENDENT. Examples:
 - Any important context (stuck, has code, follow-up, frustrated, etc.)
 
 ── other fields ────────────────────────────────────────────────────────────────
-has_code: true if message contains a code snippet
-language: student's writing language ("en", "de", etc.)
 complexity: "simple" if single concept; "complex" if multi-part or full assignment
-domain: best guess at topic area ("software_engineering", "machine_learning", "general", etc.)
+rewrite_question: rewrite the student's question as a clear and concise search query optimized for retrieving relevant documents or text chunks. Preserve the original intent, include key technical terms, and remove unnecessary conversational wording.
 
 Output ONLY valid JSON. No markdown, no explanation.
 """

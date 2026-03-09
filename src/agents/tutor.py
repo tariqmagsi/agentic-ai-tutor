@@ -14,14 +14,12 @@ class TutorAgent:
         response_style = state.get("response_style", "conceptual")
         question_analysis = state.get("question_analysis", "")
         competence_level = state.get("competence_level", "novice")
-        has_code = state.get("has_code", False)
         complexity = state.get("complexity", "simple")
-        domain = state.get("domain", "general")
         history = state.get("conversation_history", [])
 
         print(f"[TutorAgent] intent={intent}, style={response_style}, "
               f"competence={competence_level}, complexity={complexity}, "
-              f"has_code={has_code}, docs={len(docs)}, history={len(history)} turns")
+              f"docs={len(docs)}, history={len(history)} turns")
 
         # Build course material context
         if docs:
@@ -46,7 +44,7 @@ class TutorAgent:
             f"== Response style ==\n{response_style}\n\n"
             f"== Student competence ==\n{competence_level}\n\n"
             f"== Student message ==\n{q}\n\n"
-            f"Intent: {intent} | Complexity: {complexity} | Domain: {domain} | Has code: {has_code}\n"
+            f"Intent: {intent} | Complexity: {complexity}\n"
         )
 
         if history_str:

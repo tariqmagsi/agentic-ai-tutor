@@ -4,10 +4,13 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 from langchain_core.documents import Document
+from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
 
 from src.prompts.chunking import CODE_CHUNK_SYSTEM
-from src.utils.utils import extract_metadata, make_semantic_chunker, nav_fields, store, llm
+from src.prompts.chunking import AGENTIC_CHUNK_SYSTEM
+from src.utils.utils import extract_metadata, nav_fields, store, llm
+from src.utils.utils import safe_json_loads
 
 # ── Code-block description ────────────────────────────────────────────────────
 
@@ -58,6 +61,26 @@ def _extract_code_blocks(soup: BeautifulSoup, url: str, slug: str, page_title: s
             ))
         pre.decompose()
     return docs
+
+
+# ── Agentic chunking — LLM decides where to split ────────────────────────────
+
+def _agentic_chunk(text: str, max_chars: int = 12000) -> list[str]:
+    """Send text to LLM in windows, let it split into semantic chunks."""
+    all_chunks = []
+    for start in range(0, len(text), max_chars):
+        window = text[start:start + max_chars]
+        resp = llm.invoke([
+            SystemMessage(content=AGENTIC_CHUNK_SYSTEM),
+            HumanMessage(content=window),
+        ])
+        raw = resp.content.strip().replace("```json", "").replace("```", "").strip()
+        chunks = safe_json_loads(raw)
+        if isinstance(chunks, list):
+            all_chunks.extend([c for c in chunks if isinstance(c, str) and c.strip()])
+        else:
+            all_chunks.append(window)
+    return all_chunks
 
 
 # ── Extract prose sections ────────────────────────────────────────────────────
@@ -134,11 +157,14 @@ def run(url: str) -> list[Document]:
         page_title = _page_title(soup)
 
         print("🔲  Extracting code blocks...")
-        _chunker = make_semantic_chunker(threshold=0.80)
         code_docs  = _extract_code_blocks(soup, url, slug, page_title)
 
-        print("🔀  Semantic chunking prose...")
-        prose_docs = _chunker.split_documents(_extract_prose(soup))
+        print("🤖  Agentic chunking prose (LLM-driven)...")
+        prose_sections = _extract_prose(soup)
+        prose_text = "\n\n".join(d.page_content for d in prose_sections)
+        prose_chunks = _agentic_chunk(prose_text)
+        prose_docs = [Document(page_content=c) for c in prose_chunks]
+        print(f"    → {len(prose_docs)} prose chunks created")
 
         chunks = _enrich(code_docs + prose_docs, url, slug, page_title)
         all_docs.extend(chunks)

@@ -7,15 +7,13 @@ CompetenceLevel = Literal["novice", "intermediate", "advanced"]
 class TutorState(TypedDict, total=False):
     # Input
     original_question: str
+    chunk_type: str
 
     # QuestionUnderstandingAgent
     intent: str          
     response_style: str   
     question_analysis: str
-    has_code: bool
-    language: str
     complexity: str 
-    domain: str
 
     # PersonalizationAgent
     competence_level: CompetenceLevel
@@ -24,7 +22,10 @@ class TutorState(TypedDict, total=False):
     route: str
     needs_clarification: bool
     clarification_question: str
-    
+
+    # MultiQueryAgent
+    search_queries: List[str]
+
     # RetrievalAgent
     retrieved_docs: List[Document]
 

@@ -23,10 +23,7 @@ class QuestionUnderstandingAgent:
                 "intent": "concept",
                 "response_style": "conceptual",
                 "question_analysis": "No question provided.",
-                "has_code": False,
-                "language": "en",
-                "complexity": "simple",
-                "domain": "general",
+                "complexity": "simple"
             }
 
         # Include recent history so the agent understands follow-ups correctly
@@ -58,30 +55,19 @@ class QuestionUnderstandingAgent:
 
         question_analysis = (data.get("question_analysis") or "General programming question.").strip()
 
-        has_code = data.get("has_code")
-        if not isinstance(has_code, bool):
-            has_code = "```" in q or any(
-                kw in q for kw in ["class ", "def ", "public ", "void ", "return "]
-            )
-
-        language = data.get("language") or "en"
         complexity = (
             data.get("complexity")
             if data.get("complexity") in ("simple", "complex")
             else ("complex" if len(q.split()) > 25 else "simple")
         )
-        domain = (data.get("domain") or "general").strip()
 
         print(f"[QuestionUnderstanding] intent={intent}, style={response_style}, "
-              f"complexity={complexity}, has_code={has_code}, domain={domain}")
+              f"complexity={complexity}")
         print(f"[QuestionUnderstanding] analysis: {question_analysis}")
 
         return {
             "intent": intent,
             "response_style": response_style,
             "question_analysis": question_analysis,
-            "has_code": has_code,
-            "language": language,
-            "complexity": complexity,
-            "domain": domain,
+            "complexity": complexity
         }

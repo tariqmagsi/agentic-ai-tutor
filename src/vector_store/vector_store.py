@@ -4,7 +4,7 @@ from chromadb.config import Settings
 from langchain_chroma import Chroma
 from langchain_community.docstore.document import Document
 from langchain_huggingface import HuggingFaceEmbeddings
-
+import chromadb
 from src.config.config import config
 
 _CHROMA_SETTINGS = Settings(anonymized_telemetry=False, is_persistent=True)
@@ -12,12 +12,18 @@ _CHROMA_SETTINGS = Settings(anonymized_telemetry=False, is_persistent=True)
 class VectorStoreManager:
     """Manages ChromaDB vector store operations."""
 
-    def __init__(self):
+    def __init__(self, type="agentic"):
+        if hasattr(self, "vector_store"):
+            return
+        self.client = chromadb.CloudClient(
+            api_key=config.CHROMA_API_KEY,
+            tenant=config.CHROMA_TENANT,
+            database=config.CHROMA_DB
+        )
         self.vector_store = Chroma(
-            collection_name=config.COLLECTION_NAME,
+            collection_name=config.AGENTIC_COLLECTION_NAME if type == "agentic" else config.COLLECTION_NAME,
             embedding_function=HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL),
-            persist_directory=config.CHROMA_PERSIST_DIRECTORY,
-            client_settings=_CHROMA_SETTINGS,
+            client=self.client
         )
 
     def add_documents(self, documents: list[Document]) -> None:
