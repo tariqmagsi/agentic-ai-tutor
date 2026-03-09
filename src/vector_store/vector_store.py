@@ -4,10 +4,14 @@ from chromadb.config import Settings
 from langchain_chroma import Chroma
 from langchain_community.docstore.document import Document
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
 import chromadb
 from src.config.config import config
 
-_CHROMA_SETTINGS = Settings(anonymized_telemetry=False, is_persistent=True)
+_COLLECTION_MAP = {
+    "agentic": config.AGENTIC_COLLECTION_NAME,
+    "hybrid": config.COLLECTION_NAME,
+}
 
 class VectorStoreManager:
     """Manages ChromaDB vector store operations."""
@@ -20,9 +24,11 @@ class VectorStoreManager:
             tenant=config.CHROMA_TENANT,
             database=config.CHROMA_DB
         )
+
         self.vector_store = Chroma(
-            collection_name=config.AGENTIC_COLLECTION_NAME if type == "agentic" else config.COLLECTION_NAME,
-            embedding_function=HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL),
+            collection_name=_COLLECTION_MAP.get(type, config.COLLECTION_NAME),
+            # embedding_function=HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL),
+            embedding_function=OpenAIEmbeddings("text-embedding-3-small"),
             client=self.client
         )
 
