@@ -27,8 +27,8 @@ class VectorStoreManager:
 
         self.vector_store = Chroma(
             collection_name=_COLLECTION_MAP.get(type, config.COLLECTION_NAME),
-            # embedding_function=HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL),
-            embedding_function=OpenAIEmbeddings("text-embedding-3-small"),
+            embedding_function=HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL),
+            # embedding_function=OpenAIEmbeddings("text-embedding-3-small"),
             client=self.client
         )
 
