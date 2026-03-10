@@ -71,7 +71,7 @@ Student needs structure and guidance.
 → Do NOT include code.
 
 → Ask about the FIRST step:
-"Does step 1 make sense? What would you do there?"
+"Does steps make sense? If you stuck in between I can guide you more."
 
 debug_guide:
 Student has an error or failing test.
