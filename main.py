@@ -4,11 +4,15 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from src.data_processor.youtube_transcript_chunk import run as run_hybrid_youtube_chunk
-from src.data_processor.webpage_chunk import run as run_hybrid_webpage_chunk
+from src.data_processor.youtube_transcript_chunk import run as run_semantic_youtube_chunk
+from src.data_processor.webpage_chunk import run as run_semantic_webpage_chunk
 from src.data_processor.agentic_youtube_transcript_chunking import run as run_youtube_chunk
 from src.data_processor.agentic_webpage_chunking import run as run_webpage_chunk
 from src.utils.utils import get_video_id, is_youtube_url, set_active_store_type
+from src.data_processor.recursive_webpage_chunk import run as run_recursive_webpage_chunk
+from src.data_processor.recursive_youtube_chunk import run as run_recursive_youtube_chunk
+from src.data_processor.fixed_size_webpage_chunk import run as run_fixed_size_webpage_chunk
+from src.data_processor.fixed_size_youtube_chunk import run as run_fixed_size_youtube_chunk
 
 app = FastAPI()
 
@@ -65,13 +69,21 @@ async def ingest_information(request: InjestRequest):
             video_id = get_video_id(url)
             if request.chunk_type == "agentic":
                 chunk_docs = run_youtube_chunk(video_id)
-            elif request.chunk_type == "hybrid":
-                chunk_docs = run_hybrid_youtube_chunk(video_id)
+            elif request.chunk_type == "semantic":
+                chunk_docs = run_semantic_youtube_chunk(video_id)
+            elif request.chunk_type == "fixed_size":
+                chunk_docs = run_fixed_size_youtube_chunk(video_id)
+            elif request.chunk_type == "recursive":
+                chunk_docs = run_recursive_youtube_chunk(video_id)
         else:   
             if request.chunk_type == "agentic":
                 chunk_docs = run_webpage_chunk(url)
-            elif request.chunk_type == "hybrid":
-                chunk_docs = run_hybrid_webpage_chunk(url)
+            elif request.chunk_type == "semantic":
+                chunk_docs = run_semantic_webpage_chunk(url)
+            elif request.chunk_type == "fixed_size":
+                chunk_docs = run_fixed_size_webpage_chunk(url)
+            elif request.chunk_type == "recursive":
+                chunk_docs = run_recursive_webpage_chunk(url)
         
         return {
             "docs": chunk_docs,

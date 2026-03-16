@@ -16,6 +16,8 @@ class Config:
     EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
     COLLECTION_NAME: str = "rag_tutor_collection"
     AGENTIC_COLLECTION_NAME: str = "agentic_tutor_collection"
+    FIXED_SIZE_COLLECTION_NAME: str = "fixed_size_tutor_collection"
+    RECURSIVE_COLLECTION_NAME: str = "recursive_tutor_collection"
 
     CHROMA_CLOUD_HOST = os.getenv("CHROMA_CLOUD_HOST")
     CHROMA_CLOUD_PORT = int(os.getenv("CHROMA_CLOUD_PORT", "8000"))

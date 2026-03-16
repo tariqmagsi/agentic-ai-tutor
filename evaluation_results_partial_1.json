@@ -1,0 +1,2990 @@
+[
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.488,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.222,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 0.0,
+    "latency_s": 0.214,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.289,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 0.0,
+    "latency_s": 0.46,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 2.914,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 45.385,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 1,
+    "source_recall": 0.0,
+    "latency_s": 1.891,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 1.405,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 5,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 1.411,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 5,
+    "source_recall": 0.0,
+    "latency_s": 1.614,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.727,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.673,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 0.0,
+    "latency_s": 0.589,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.666,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.594,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 0.0,
+    "latency_s": 0.56,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 1.776,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 1,
+    "source_recall": 1.0,
+    "latency_s": 1.799,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 0,
+    "source_recall": 0.0,
+    "latency_s": 1.938,
+    "scores": {
+      "relevance": 2,
+      "completeness": 2,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.2
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 1.864,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 5,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 1.644,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 5
+    },
+    "overall": 4.4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 0.0,
+    "latency_s": 1.666,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine",
+    "docs_before": 22,
+    "docs_after": 22,
+    "source_recall": 1.0,
+    "latency_s": 3.437,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine",
+    "docs_before": 14,
+    "docs_after": 14,
+    "source_recall": 1.0,
+    "latency_s": 3.716,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine",
+    "docs_before": 19,
+    "docs_after": 19,
+    "source_recall": 0.0,
+    "latency_s": 4.007,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine",
+    "docs_before": 18,
+    "docs_after": 18,
+    "source_recall": 1.0,
+    "latency_s": 3.688,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine",
+    "docs_before": 13,
+    "docs_after": 13,
+    "source_recall": 1.0,
+    "latency_s": 3.457,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine",
+    "docs_before": 18,
+    "docs_after": 18,
+    "source_recall": 0.0,
+    "latency_s": 3.739,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 20,
+    "docs_after": 16,
+    "source_recall": 1.0,
+    "latency_s": 7.167,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 12,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 7.976,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 21,
+    "docs_after": 2,
+    "source_recall": 0.0,
+    "latency_s": 26.493,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 19,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 20.829,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 14,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 4.576,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 18,
+    "docs_after": 12,
+    "source_recall": 0.0,
+    "latency_s": 5.323,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 2,
+      "coherence": 4
+    },
+    "overall": 3.2
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 11.909,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr",
+    "docs_before": 22,
+    "docs_after": 22,
+    "source_recall": 1.0,
+    "latency_s": 3.77,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr",
+    "docs_before": 30,
+    "docs_after": 30,
+    "source_recall": 0.0,
+    "latency_s": 3.902,
+    "scores": {
+      "relevance": 3,
+      "completeness": 2,
+      "pedagogical_quality": 4,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.2
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr",
+    "docs_before": 26,
+    "docs_after": 26,
+    "source_recall": 1.0,
+    "latency_s": 3.81,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr",
+    "docs_before": 16,
+    "docs_after": 16,
+    "source_recall": 1.0,
+    "latency_s": 3.629,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr",
+    "docs_before": 24,
+    "docs_after": 24,
+    "source_recall": 0.0,
+    "latency_s": 3.841,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 23,
+    "docs_after": 18,
+    "source_recall": 1.0,
+    "latency_s": 6.913,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 18,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 5.276,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 32,
+    "docs_after": 1,
+    "source_recall": 0.0,
+    "latency_s": 6.629,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 21,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 5.534,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 5
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 15,
+    "docs_after": 1,
+    "source_recall": 1.0,
+    "latency_s": 5.45,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "fixed_size",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 23,
+    "docs_after": 7,
+    "source_recall": 0.0,
+    "latency_s": 6.039,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.366,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 5
+    },
+    "overall": 4.4
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.358,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "recursive",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.219,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "recursive",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.193,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.212,
+    "scores": {
+      "relevance": 5,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.186,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 1.448,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 5,
+    "source_recall": 1.0,
+    "latency_s": 8.961,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.96,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.91,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 1.869,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 2.142,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "recursive",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 1.727,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "recursive",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 2.093,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 5
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 2.049,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 7,
+    "source_recall": 1.0,
+    "latency_s": 9.199,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 19.716,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine",
+    "docs_before": 12,
+    "docs_after": 12,
+    "source_recall": 1.0,
+    "latency_s": 7.033,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine",
+    "docs_before": 22,
+    "docs_after": 22,
+    "source_recall": 1.0,
+    "latency_s": 10.719,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine",
+    "docs_before": 24,
+    "docs_after": 24,
+    "source_recall": 1.0,
+    "latency_s": 2.98,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine",
+    "docs_before": 12,
+    "docs_after": 12,
+    "source_recall": 1.0,
+    "latency_s": 6.371,
+    "scores": {
+      "relevance": 5,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine",
+    "docs_before": 18,
+    "docs_after": 18,
+    "source_recall": 1.0,
+    "latency_s": 3.203,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 23,
+    "docs_after": 19,
+    "source_recall": 1.0,
+    "latency_s": 7.099,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 11,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 4.391,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 20,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 5.531,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 26,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 5.257,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 14,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 5.264,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 18,
+    "docs_after": 14,
+    "source_recall": 1.0,
+    "latency_s": 4.787,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr",
+    "docs_before": 27,
+    "docs_after": 27,
+    "source_recall": 1.0,
+    "latency_s": 3.679,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr",
+    "docs_before": 21,
+    "docs_after": 21,
+    "source_recall": 1.0,
+    "latency_s": 3.917,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr",
+    "docs_before": 31,
+    "docs_after": 31,
+    "source_recall": 1.0,
+    "latency_s": 18.907,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr",
+    "docs_before": 25,
+    "docs_after": 25,
+    "source_recall": 1.0,
+    "latency_s": 3.996,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr",
+    "docs_before": 16,
+    "docs_after": 16,
+    "source_recall": 1.0,
+    "latency_s": 3.883,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr",
+    "docs_before": 25,
+    "docs_after": 25,
+    "source_recall": 1.0,
+    "latency_s": 4.543,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 30,
+    "docs_after": 18,
+    "source_recall": 1.0,
+    "latency_s": 5.829,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 19,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 5.604,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 28,
+    "docs_after": 4,
+    "source_recall": 1.0,
+    "latency_s": 6.333,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 24,
+    "docs_after": 4,
+    "source_recall": 1.0,
+    "latency_s": 5.879,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 15,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 5.764,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "recursive",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 22,
+    "docs_after": 15,
+    "source_recall": 1.0,
+    "latency_s": 5.351,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "semantic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.435,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "semantic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.296,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "cosine",
+    "docs_before": 7,
+    "docs_after": 7,
+    "source_recall": 1.0,
+    "latency_s": 0.187,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "cosine",
+    "docs_before": 6,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 0.19,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "semantic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.419,
+    "scores": {
+      "relevance": 5,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.196,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "semantic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 1.626,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "semantic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 4,
+    "source_recall": 1.0,
+    "latency_s": 5.243,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 7,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 3.18,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 5
+    },
+    "overall": 4.4
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 6,
+    "docs_after": 5,
+    "source_recall": 1.0,
+    "latency_s": 3.028,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 5,
+      "coherence": 5
+    },
+    "overall": 4.4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "semantic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 1,
+    "source_recall": 1.0,
+    "latency_s": 4.764,
+    "scores": {
+      "relevance": 5,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 4,
+    "source_recall": 1.0,
+    "latency_s": 1.53,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "semantic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 0.5,
+    "latency_s": 0.674,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "semantic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.706,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.623,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.74,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "semantic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.704,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.731,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "semantic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 6,
+    "source_recall": 0.5,
+    "latency_s": 9.307,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "semantic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 2.511,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 2.127,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 1.861,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 5,
+      "coherence": 5
+    },
+    "overall": 4.6
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "semantic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 2.256,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 1.996,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "semantic",
+    "retrieval": "multi_cosine",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 3.592,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "semantic",
+    "retrieval": "multi_cosine",
+    "docs_before": 17,
+    "docs_after": 17,
+    "source_recall": 1.0,
+    "latency_s": 3.815,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "multi_cosine",
+    "docs_before": 30,
+    "docs_after": 30,
+    "source_recall": 1.0,
+    "latency_s": 3.839,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "multi_cosine",
+    "docs_before": 19,
+    "docs_after": 19,
+    "source_recall": 1.0,
+    "latency_s": 6.32,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 17,
+    "docs_after": 12,
+    "source_recall": 1.0,
+    "latency_s": 12.593,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr",
+    "docs_before": 30,
+    "docs_after": 30,
+    "source_recall": 1.0,
+    "latency_s": 8.758,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 5.033,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 4.028,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 19.8,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 30,
+    "docs_after": 20,
+    "source_recall": 1.0,
+    "latency_s": 7.321,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 5,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 18,
+    "docs_after": 4,
+    "source_recall": 1.0,
+    "latency_s": 6.35,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 34,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 6.64,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 24,
+    "docs_after": 7,
+    "source_recall": 1.0,
+    "latency_s": 5.971,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 5,
+      "coherence": 5
+    },
+    "overall": 4.6
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 23,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 6.176,
+    "scores": {
+      "relevance": 5,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "semantic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 23,
+    "docs_after": 11,
+    "source_recall": 1.0,
+    "latency_s": 6.958,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.398,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.352,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.239,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.25,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "agentic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.249,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "agentic",
+    "retrieval": "cosine",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.287,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 1.739,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 5,
+    "source_recall": 1.0,
+    "latency_s": 2.048,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4.2
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 1.504,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 5,
+    "source_recall": 1.0,
+    "latency_s": 1.401,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "agentic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 1.464,
+    "scores": {
+      "relevance": 5,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "agentic",
+    "retrieval": "cosine_rerank",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 1.68,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.68,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.768,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 1.295,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.599,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "agentic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.739,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "agentic",
+    "retrieval": "mmr",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 0.675,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 2.319,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 1.951,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 2.078,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 1.88,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "agentic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 2.086,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "agentic",
+    "retrieval": "mmr_rerank",
+    "docs_before": 8,
+    "docs_after": 8,
+    "source_recall": 1.0,
+    "latency_s": 1.942,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine",
+    "docs_before": 18,
+    "docs_after": 18,
+    "source_recall": 1.0,
+    "latency_s": 3.182,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.4
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine",
+    "docs_before": 12,
+    "docs_after": 12,
+    "source_recall": 1.0,
+    "latency_s": 3.617,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine",
+    "docs_before": 21,
+    "docs_after": 21,
+    "source_recall": 1.0,
+    "latency_s": 3.33,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine",
+    "docs_before": 21,
+    "docs_after": 21,
+    "source_recall": 1.0,
+    "latency_s": 3.697,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 5,
+      "coherence": 4
+    },
+    "overall": 4.4
+  },
+  {
+    "question": "Why should I use UUID instead of Long for Entity IDs in Spring JPA?",
+    "intent": "rule",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine",
+    "docs_before": 13,
+    "docs_after": 13,
+    "source_recall": 1.0,
+    "latency_s": 3.916,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine",
+    "docs_before": 15,
+    "docs_after": 15,
+    "source_recall": 1.0,
+    "latency_s": 3.367,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 20,
+    "docs_after": 19,
+    "source_recall": 1.0,
+    "latency_s": 20.628,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 2,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 13,
+    "docs_after": 4,
+    "source_recall": 1.0,
+    "latency_s": 5.581,
+    "scores": {
+      "relevance": 5,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 22,
+    "docs_after": 2,
+    "source_recall": 1.0,
+    "latency_s": 21.406,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 19,
+    "docs_after": 6,
+    "source_recall": 1.0,
+    "latency_s": 8.418,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  },
+  {
+    "question": "Why should I learn about Clean Code rules and what are the key takeaways?",
+    "intent": "summary",
+    "chunking": "agentic",
+    "retrieval": "multi_cosine_rerank",
+    "docs_before": 16,
+    "docs_after": 16,
+    "source_recall": 1.0,
+    "latency_s": 12.446,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is an Aggregate in Domain-Driven Design and why is it important?",
+    "intent": "concept",
+    "chunking": "agentic",
+    "retrieval": "multi_mmr",
+    "docs_before": 21,
+    "docs_after": 21,
+    "source_recall": 1.0,
+    "latency_s": 5.232,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 3,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "How do I implement Constructor-based Autowiring instead of Field-based Autowiring in Spring?",
+    "intent": "procedure",
+    "chunking": "agentic",
+    "retrieval": "multi_mmr",
+    "docs_before": 19,
+    "docs_after": 19,
+    "source_recall": 1.0,
+    "latency_s": 7.31,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "multi_mmr",
+    "docs_before": 23,
+    "docs_after": 23,
+    "source_recall": 1.0,
+    "latency_s": 19.792,
+    "scores": {
+      "relevance": 4,
+      "completeness": 3,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.6
+  },
+  {
+    "question": "Show me a code example of a side effect in a method that violates Clean Code principles.",
+    "intent": "example",
+    "chunking": "agentic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 27,
+    "docs_after": 3,
+    "source_recall": 1.0,
+    "latency_s": 8.146,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 3,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 3.8
+  },
+  {
+    "question": "What is the difference between Entity and Value Object in DDD?",
+    "intent": "comparison",
+    "chunking": "agentic",
+    "retrieval": "multi_mmr_rerank",
+    "docs_before": 23,
+    "docs_after": 5,
+    "source_recall": 1.0,
+    "latency_s": 42.53,
+    "scores": {
+      "relevance": 4,
+      "completeness": 4,
+      "pedagogical_quality": 4,
+      "accuracy": 4,
+      "coherence": 4
+    },
+    "overall": 4
+  }
+]

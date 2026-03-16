@@ -9,8 +9,10 @@ import chromadb
 from src.config.config import config
 
 _COLLECTION_MAP = {
-    "agentic": config.AGENTIC_COLLECTION_NAME,
-    "hybrid": config.COLLECTION_NAME,
+    "semantic":   config.COLLECTION_NAME,
+    "agentic":    config.AGENTIC_COLLECTION_NAME,
+    "fixed_size": config.FIXED_SIZE_COLLECTION_NAME,
+    "recursive":  config.RECURSIVE_COLLECTION_NAME,
 }
 
 class VectorStoreManager:

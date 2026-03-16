@@ -72,11 +72,12 @@ def set_active_store_type(type: str) -> None:
     _active_store_type = type
     print(f"[utils] Active store type set to: {type}")
 
-def store(docs: list[Document]) -> None:
+def store(docs: list[Document], type: str = None) -> None:
     """Persist documents to the vector store using the active store type."""
+    store_type = type or _active_store_type
     if docs:
         print(f"[utils] Storing {len(docs)} docs to '{_active_store_type}' collection")
-        VectorStoreManager(type=_active_store_type).add_documents(docs)
+        VectorStoreManager(type=store_type).add_documents(docs)
 
 from urllib.parse import urlparse, parse_qs
 

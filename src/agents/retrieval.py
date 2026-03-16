@@ -42,6 +42,30 @@ class RetrievalAgent:
             if (getattr(d, "page_content", "") or "").strip()
         ]
 
+    def retrieve_mmr(self, query: str, k: int = 8, fetch_k: int = 20,
+                     lambda_mult: float = 0.5,
+                     metadata_filter: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        """Maximal Marginal Relevance — balances relevance with diversity."""
+        try:
+            kwargs = {"k": k, "fetch_k": fetch_k, "lambda_mult": lambda_mult}
+            if metadata_filter:
+                kwargs["filter"] = metadata_filter
+            docs = self.vector_store.max_marginal_relevance_search(query, **kwargs)
+        except Exception as e:
+            print(f"[RetrievalAgent] MMR error: {e}")
+            return []
+ 
+        print(f"[RetrievalAgent] MMR retrieved {len(docs)} docs (lambda={lambda_mult}).")
+ 
+        return [
+            {
+                "content": (getattr(d, "page_content", "") or "").strip(),
+                "metadata": (getattr(d, "metadata", {}) or {}),
+            }
+            for d in docs
+            if (getattr(d, "page_content", "") or "").strip()
+        ]
+
     def retrieve_multi(self, queries: List[str], k_per_query: int = 5,
                        metadata_filter: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """Run retrieval per query, deduplicate, fuse with Reciprocal Rank Fusion."""
