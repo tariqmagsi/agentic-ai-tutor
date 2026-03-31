@@ -147,6 +147,6 @@ def run(url: str) -> list[Document]:
     except Exception as e:
         print(f"  ❌ Failed: {url} — {e}")
 
-    store(all_docs)
+    store(all_docs, type="semantic")
     print(f"\n✅  Stored {len(all_docs)} chunks from {len(url)} pages")
     return all_docs

@@ -80,6 +80,6 @@ def run(video_id: str) -> list[Document]:
     print(f"🧠  Extracting metadata for {len(docs)} chunks...")
     final = _enrich(docs, base_meta)
 
-    store(final)
+    store(final, type="agentic")
     print(f"\n✅  Stored {len(final)} chunks for '{base_meta.get('video_title')}'")
     return final

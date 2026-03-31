@@ -13,6 +13,7 @@ from src.data_processor.recursive_webpage_chunk import run as run_recursive_webp
 from src.data_processor.recursive_youtube_chunk import run as run_recursive_youtube_chunk
 from src.data_processor.fixed_size_webpage_chunk import run as run_fixed_size_webpage_chunk
 from src.data_processor.fixed_size_youtube_chunk import run as run_fixed_size_youtube_chunk
+from src.graph.visualize_graph import visualize_langgraph_app
 
 app = FastAPI()
 
@@ -46,6 +47,9 @@ def get_graph():
     if graph is None:
         graph = _build_graph()
     return graph
+
+graph=get_graph()
+visualize_langgraph_app(graph)
 
 class ChatRequest(BaseModel):
     question: str

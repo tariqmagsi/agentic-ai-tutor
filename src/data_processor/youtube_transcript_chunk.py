@@ -72,6 +72,6 @@ def run(video_id: str) -> list[Document]:
     final = _enrich(docs, base_meta)
     print(final)
 
-    store(final)
+    store(final, type="semantic")
     print(f"\n✅  Stored {len(final)} chunks for '{base_meta.get('video_title')}'")
     return final
