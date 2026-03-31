@@ -48,8 +48,8 @@ def get_graph():
         graph = _build_graph()
     return graph
 
-graph=get_graph()
-visualize_langgraph_app(graph)
+# graph=get_graph()
+# visualize_langgraph_app(graph)
 
 class ChatRequest(BaseModel):
     question: str
