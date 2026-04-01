@@ -23,10 +23,33 @@ class TutorAgent:
 
         # Build course material context
         if docs:
-            context = "\n\n".join(
-                f"[Material {i+1}]\n{d.page_content}"
-                for i, d in enumerate(docs[:4])
-            )
+            parts = []
+            for i, d in enumerate(docs[:4]):
+                meta = getattr(d, "metadata", {}) or {}
+                # Build a rich header from whichever metadata fields exist
+                title = meta.get("page_title") or meta.get("video_title") or ""
+                header_items = [f"[Material {i+1}]"]
+                if title:
+                    header_items.append(f"Title: {title}")
+                if meta.get("source"):
+                    header_items.append(f"Source: {meta['source']}")
+                if meta.get("url"):
+                    header_items.append(f"URL: {meta['url']}")
+                if meta.get("author"):
+                    header_items.append(f"Author: {meta['author']}")
+                if meta.get("content_type"):
+                    header_items.append(f"Type: {meta['content_type']}")
+                if meta.get("section_heading"):
+                    header_items.append(f"Section: {meta['section_heading']}")
+                if meta.get("chapter"):
+                    header_items.append(f"Chapter: {meta['chapter']}")
+                if meta.get("page"):
+                    header_items.append(f"Page: {meta['page']}")
+                if meta.get("code_description"):
+                    header_items.append(f"Code: {meta['code_description']}")
+                header = " | ".join(header_items)
+                parts.append(f"{header}\n{d.page_content}")
+            context = "\n\n".join(parts)
         else:
             context = "No relevant course material found. Use general programming knowledge."
 
