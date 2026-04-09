@@ -1,7 +1,9 @@
 import os
 import json
+import shutil
+import tempfile
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from src.data_processor.youtube_transcript_chunk import run as run_semantic_youtube_chunk
@@ -13,6 +15,7 @@ from src.data_processor.recursive_webpage_chunk import run as run_recursive_webp
 from src.data_processor.recursive_youtube_chunk import run as run_recursive_youtube_chunk
 from src.data_processor.fixed_size_webpage_chunk import run as run_fixed_size_webpage_chunk
 from src.data_processor.fixed_size_youtube_chunk import run as run_fixed_size_youtube_chunk
+from src.data_processor.java_repo_chunking import run as java_repo_chunking
 from src.graph.visualize_graph import visualize_langgraph_app
 
 app = FastAPI()
@@ -60,6 +63,9 @@ class InjestRequest(BaseModel):
     url: str
     chunk_type: str
 
+class JavaRepoRequest(BaseModel):
+    repo_path: str
+
 @app.post("/ingest_url")
 async def ingest_information(request: InjestRequest):
     if not os.getenv("OPENAI_API_KEY"):
@@ -96,6 +102,36 @@ async def ingest_information(request: InjestRequest):
         }
     except Exception as e:
         return {"error": str(e), "success": False}
+
+
+@app.post("/ingest_java_repo")
+async def ingest_java_repo(request: JavaRepoRequest):
+    if not os.getenv("OPENAI_API_KEY"):
+        return {"error": "OPENAI_API_KEY not set"}
+    try:
+        chunk_docs = java_repo_chunking(request.repo_path)
+        return {"docs": [doc.page_content for doc in chunk_docs], "success": True}
+    except Exception as e:
+        return {"error": str(e), "success": False}
+
+
+@app.post("/ingest_java_repo_upload")
+async def ingest_java_repo_upload(file: UploadFile = File(...)):
+    if not os.getenv("OPENAI_API_KEY"):
+        return {"error": "OPENAI_API_KEY not set"}
+    if not file.filename.endswith(".zip"):
+        return {"error": "Only .zip files are supported", "success": False}
+    tmp_dir = tempfile.mkdtemp()
+    try:
+        zip_path = os.path.join(tmp_dir, file.filename)
+        with open(zip_path, "wb") as f:
+            shutil.copyfileobj(file.file, f)
+        chunk_docs = java_repo_chunking(zip_path)
+        return {"docs": [doc.page_content for doc in chunk_docs], "success": True}
+    except Exception as e:
+        return {"error": str(e), "success": False}
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
 @app.post("/chat")

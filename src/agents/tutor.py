@@ -24,7 +24,7 @@ class TutorAgent:
         # Build course material context
         if docs:
             parts = []
-            for i, d in enumerate(docs[:4]):
+            for i, d in enumerate(docs):
                 meta = getattr(d, "metadata", {}) or {}
                 # Build a rich header from whichever metadata fields exist
                 title = meta.get("page_title") or meta.get("video_title") or ""
