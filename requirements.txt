@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fastapi
 uvicorn[standard]
 openai
@@ -19,3 +20,15 @@ yt-dlp
 python-dotenv
 pydantic
 python-multipart
+=======
+fastmcp==2.14.2
+chromadb==1.4.0
+langchain==1.2.0
+langchain-openai==1.1.6
+pypdf==6.5.0
+python-dotenv==1.2.1
+sentence-transformers==5.2.0
+nest-asyncio==1.6.0
+uvicorn==0.40.0
+langchain-community==0.4.1
+>>>>>>> 7f2266f4b85a33c2b380052ecf47b5a68d9f5889

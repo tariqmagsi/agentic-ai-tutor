@@ -2,6 +2,8 @@ import os
 from dataclasses import dataclass, field
 from typing import List
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI as OpenAI   
+from enum import Enum
 
 load_dotenv()
 

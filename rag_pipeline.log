@@ -750,6 +750,7 @@
 2026-01-26 22:28:40,543 - src.agents.retrieval_agent - INFO - Reranked 5 documents
 2026-01-26 22:28:55,092 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-01-26 22:28:55,095 - src.agents.tutoring_agent - INFO - Generated tutoring response (3208 chars)
+<<<<<<< HEAD
 2026-02-17 00:46:34,337 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
 2026-02-17 00:46:34,338 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
 2026-02-17 00:46:37,269 - src.vector_store.vector_store - INFO - Loaded existing collection 'rag_tutor_collection' with 76 documents
@@ -7013,3 +7014,5 @@ AttributeError: 'AgenticTutorGraph' object has no attribute 'ask'
 2026-03-01 11:56:09,279 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-03-01 11:56:10,622 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-03-01 11:56:16,424 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+=======
+>>>>>>> 7f2266f4b85a33c2b380052ecf47b5a68d9f5889
