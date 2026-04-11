@@ -6,7 +6,6 @@ from src.agents.router import RouterAgent
 from src.agents.clarification import ClarificationAgent
 from src.agents.retrieval import RetrievalAgent, RetrievalNode
 from src.agents.tutor import TutorAgent
-from src.agents.evaluation import EvaluationAgent
 from src.agents.multi_queries import MultiQueryAgent
 
 
@@ -24,7 +23,6 @@ class TutorGraphBuilder:
         self.clarification_agent = ClarificationAgent()
         self.retrieval_node = RetrievalNode(retrieval_agent=RetrievalAgent(), rerank=True)
         self.tutor_agent = TutorAgent()
-        self.evaluation = EvaluationAgent()
         self.multi_queries = MultiQueryAgent() 
 
     def build(self) -> StateGraph:
@@ -36,7 +34,6 @@ class TutorGraphBuilder:
         graph.add_node("clarification", self.clarification_agent)
         graph.add_node("retrieval", self.retrieval_node)
         graph.add_node("tutor", self.tutor_agent)
-        graph.add_node("evaluation", self.evaluation)
         graph.add_node("multi_queries", self.multi_queries)
 
         graph.set_entry_point("question_understanding")
@@ -54,9 +51,8 @@ class TutorGraphBuilder:
         graph.add_edge("retrieval", "tutor")
 
 
-        graph.add_edge("tutor", "evaluation")
-        graph.add_edge("clarification", "evaluation")
-        graph.add_edge("evaluation", END)
+        graph.add_edge("tutor", END)
+        graph.add_edge("clarification", END)
         
         return graph.compile()
 

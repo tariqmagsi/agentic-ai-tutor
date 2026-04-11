@@ -104,17 +104,6 @@ async def ingest_information(request: InjestRequest):
         return {"error": str(e), "success": False}
 
 
-@app.post("/ingest_java_repo")
-async def ingest_java_repo(request: JavaRepoRequest):
-    if not os.getenv("OPENAI_API_KEY"):
-        return {"error": "OPENAI_API_KEY not set"}
-    try:
-        chunk_docs = java_repo_chunking(request.repo_path)
-        return {"docs": [doc.page_content for doc in chunk_docs], "success": True}
-    except Exception as e:
-        return {"error": str(e), "success": False}
-
-
 @app.post("/ingest_java_repo_upload")
 async def ingest_java_repo_upload(file: UploadFile = File(...)):
     if not os.getenv("OPENAI_API_KEY"):

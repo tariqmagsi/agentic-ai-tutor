@@ -11,19 +11,17 @@ graph TD;
 	clarification(clarification)
 	retrieval(retrieval)
 	tutor(tutor)
-	evaluation(evaluation)
 	multi_queries(multi_queries)
 	__end__([<p>__end__</p>]):::last
 	__start__ --> question_understanding;
-	clarification --> evaluation;
 	multi_queries --> retrieval;
 	personalization --> multi_queries;
 	question_understanding --> router;
 	retrieval --> tutor;
 	router -. &nbsp;clarify&nbsp; .-> clarification;
 	router -. &nbsp;tutor&nbsp; .-> personalization;
-	tutor --> evaluation;
-	evaluation --> __end__;
+	clarification --> __end__;
+	tutor --> __end__;
 	classDef default fill:#f2f0ff,line-height:1.2
 	classDef first fill-opacity:0
 	classDef last fill:#bfb6fc

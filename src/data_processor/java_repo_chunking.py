@@ -107,19 +107,26 @@ def _agentic_chunk(text: str, max_chars: int = 12000) -> list[str]:
     return all_chunks
 
 
-# ── Enrich metadata ───────────────────────────────────────────────────────────
+# ── Enrich metadata (same pattern as webpage & youtube) ──────────────────────
 
 def _enrich(docs: list[Document], repo: str) -> list[Document]:
     total = len(docs)
     for i, doc in enumerate(docs):
         m = extract_metadata(doc.page_content)
-        doc.metadata.update(nav_fields(i, total))
-        doc.metadata.setdefault("content_type", m.get("content_type", "concept"))
-        doc.metadata.setdefault("source", "java_repo")
-        doc.metadata.setdefault("repo", repo)
-        kind = doc.metadata.get("chunk_kind", "")
-        name = doc.metadata.get("class_name", "")
-        print(f"  [{i+1}/{total}] [{kind}] {name}")
+        nav = nav_fields(i, total)
+
+        content_type = m.get("content_type", doc.metadata.get("content_type", "concept"))
+
+        doc.metadata.update({
+            **nav,
+            "source": "java_repo",
+            "page_title": repo,
+            "content_type": content_type,
+        })
+
+        heading = doc.metadata.get("section_heading", "")
+        desc = doc.metadata.get("code_description", "")
+        print(f"  [{i+1}/{total}] [{heading}] {desc[:70]}")
     return docs
 
 
@@ -132,7 +139,6 @@ def _resolve_path(path: str) -> tuple[str, any]:
         tmp = tempfile.mkdtemp()
         with zipfile.ZipFile(p) as zf:
             zf.extractall(tmp)
-        # Zip often contains a single top-level folder — use it as root
         children = [d for d in Path(tmp).iterdir() if d.is_dir()]
         root = str(children[0]) if len(children) == 1 else tmp
         return root, tmp
@@ -142,10 +148,8 @@ def _resolve_path(path: str) -> tuple[str, any]:
 def _find_project_root(path: str) -> str:
     """Walk down until we find src/ or pom.xml — handles nested folders."""
     root = Path(path)
-    # Already a project root?
     if (root / "src").exists() or (root / "pom.xml").exists() or (root / "build.gradle").exists():
         return str(root)
-    # Check one level deeper (common with zip extracts)
     for child in root.iterdir():
         if child.is_dir():
             if (child / "src").exists() or (child / "pom.xml").exists():
@@ -174,22 +178,44 @@ def run(repo_path: str) -> list[Document]:
             skeleton = _strip_bodies(source)
             desc = _describe(skeleton, info)
             rel = str(path.relative_to(resolved))
-            meta = {"file_path": rel, "class_name": info["name"],
-                    "package": info["package"], "java_kind": info["kind"],
-                    "role": "spec" if _is_spec(info["kind"]) else "solution"}
 
-            # Spec files (interfaces, abstracts) → store skeleton + description
             if _is_spec(info["kind"]):
-                all_docs.append(Document(page_content=desc,
-                    metadata={**meta, "chunk_kind": "contract", "content_type": "rule"}))
-                all_docs.append(Document(page_content=skeleton,
-                    metadata={**meta, "chunk_kind": "contract_skeleton", "content_type": "example"}))
+                # Contract description (prose — like webpage prose chunk)
+                all_docs.append(Document(
+                    page_content=desc,
+                    metadata={
+                        "source": "java_repo", "url": rel, "slug": info["name"],
+                        "page_title": repo_name, "content_type": "rule",
+                        "is_code_block": False,
+                        "code_description": "",
+                        "section_heading": f"contract:{info['name']}",
+                    },
+                ))
+                # Contract skeleton (code — like webpage code block)
+                all_docs.append(Document(
+                    page_content=skeleton,
+                    metadata={
+                        "source": "java_repo", "url": rel, "slug": info["name"],
+                        "page_title": repo_name, "content_type": "example",
+                        "is_code_block": True,
+                        "code_description": desc,
+                        "section_heading": f"contract_skeleton:{info['name']}",
+                    },
+                ))
             else:
-                # Solution files → description only, no code
-                all_docs.append(Document(page_content=desc,
-                    metadata={**meta, "chunk_kind": "skeleton", "content_type": "concept"}))
+                # Solution description (prose, no code revealed)
+                all_docs.append(Document(
+                    page_content=desc,
+                    metadata={
+                        "source": "java_repo", "url": rel, "slug": info["name"],
+                        "page_title": repo_name, "content_type": "concept",
+                        "is_code_block": False,
+                        "code_description": "",
+                        "section_heading": f"skeleton:{info['name']}",
+                    },
+                ))
 
-            print(f"  ✔ [{meta['role']}] {rel}")
+            print(f"  ✔ [{info['kind']}] {rel}")
         except Exception as e:
             print(f"  ✘ {path.name} — {e}")
 
@@ -199,10 +225,17 @@ def run(repo_path: str) -> list[Document]:
         try:
             source = path.read_text(errors="replace")
             summary = _summarize_tests(source, path.stem)
-            all_docs.append(Document(page_content=summary,
-                metadata={"file_path": str(path.relative_to(resolved)),
-                           "class_name": path.stem, "chunk_kind": "test",
-                           "content_type": "rule", "role": "spec"}))
+            rel = str(path.relative_to(resolved))
+            all_docs.append(Document(
+                page_content=summary,
+                metadata={
+                    "source": "java_repo", "url": rel, "slug": path.stem,
+                    "page_title": repo_name, "content_type": "rule",
+                    "is_code_block": False,
+                    "code_description": "",
+                    "section_heading": f"test:{path.stem}",
+                },
+            ))
             print(f"  ✔ {path.name}")
         except Exception as e:
             print(f"  ✘ {path.name} — {e}")
@@ -212,9 +245,17 @@ def run(repo_path: str) -> list[Document]:
     for path in buckets["config"]:
         try:
             content = path.read_text(errors="replace")[:5000]
-            all_docs.append(Document(page_content=f"# {path.name}\n\n{content}",
-                metadata={"file_path": str(path.relative_to(resolved)),
-                           "chunk_kind": "config", "content_type": "procedure"}))
+            rel = str(path.relative_to(resolved))
+            all_docs.append(Document(
+                page_content=f"# {path.name}\n\n{content}",
+                metadata={
+                    "source": "java_repo", "url": rel, "slug": path.name,
+                    "page_title": repo_name, "content_type": "procedure",
+                    "is_code_block": True,
+                    "code_description": f"Configuration file: {path.name}",
+                    "section_heading": f"config:{path.name}",
+                },
+            ))
             print(f"  ✔ {path.name}")
         except Exception as e:
             print(f"  ✘ {path.name} — {e}")
@@ -226,10 +267,18 @@ def run(repo_path: str) -> list[Document]:
             content = path.read_text(errors="replace")
             if len(content) < 100:
                 continue
+            rel = str(path.relative_to(resolved))
             for chunk in _agentic_chunk(content):
-                all_docs.append(Document(page_content=chunk,
-                    metadata={"file_path": str(path.relative_to(resolved)),
-                               "chunk_kind": "task", "content_type": "summary"}))
+                all_docs.append(Document(
+                    page_content=chunk,
+                    metadata={
+                        "source": "java_repo", "url": rel, "slug": path.stem,
+                        "page_title": repo_name, "content_type": "summary",
+                        "is_code_block": False,
+                        "code_description": "",
+                        "section_heading": f"task:{path.name}",
+                    },
+                ))
             print(f"  ✔ {path.name}")
 
     # ── Enrich & store ────────────────────────────────────────────────────
@@ -239,7 +288,6 @@ def run(repo_path: str) -> list[Document]:
     store(final, type="agentic")
     print(f"\n✅  Stored {len(final)} chunks from '{repo_name}'")
 
-    # Clean up temp dir if we extracted a zip
     if tmp_dir:
         import shutil
         shutil.rmtree(tmp_dir, ignore_errors=True)
